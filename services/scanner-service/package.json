@@ -6,11 +6,13 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon src/index.js"
   },
   "author": "Aman",
   "license": "ISC",
-  "description": "",
+  "description": "Microservice for scanning websites for accessibility issues using Puppeteer and Axe-core",
+  "type": "module",
   "dependencies": {
     "@axe-core/puppeteer": "^4.10.2",
     "cors": "^2.8.5",
