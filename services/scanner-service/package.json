@@ -2,9 +2,11 @@
   "name": "scanner-service",
   "version": "1.0.0",
   "main": "index.js",
+  "types": "module",
   "directories": {
     "test": "tests"
   },
+  
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon src/index.js"

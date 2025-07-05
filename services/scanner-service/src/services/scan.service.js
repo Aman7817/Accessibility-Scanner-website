@@ -1,6 +1,7 @@
 import asyncHandler from "../utils/asyncHandler.js";
 import ApiError from "../utils/ApiError.js";
 import { puppeteerConfig } from "../config/puppeteer.config.js";
+import { axeConfig } from "../config/axe.config.js";
 import axe from "axe-core";
 
 const scanservice = asyncHandler(async(url) => {
