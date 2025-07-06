@@ -1,4 +1,4 @@
-import { AppError } from '../utils/errorHandler.js';
+import { ApiError } from "../utils/ApiError.js";
 
 export function validateURL(req, res, next) {
   const { url } = req.body;
@@ -9,11 +9,11 @@ export function validateURL(req, res, next) {
 
     // Allow only http & https
     if (!['http:', 'https:'].includes(parsed.protocol)) {
-      throw new Error('Only http and https URLs are allowed');
+      throw new ApiError('Only http and https URLs are allowed');
     }
 
     next();
   } catch (err) {
-    next(new AppError(400, `Invalid URL: ${err.message}`));
+    next(new ApiError(400, `Invalid URL: ${err.message}`));
   }
 }

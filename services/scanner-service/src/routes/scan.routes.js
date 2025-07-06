@@ -8,3 +8,6 @@ const router = Router();
 // POST /api/scan
 router.route("/scan")
     .post(rateLimiter, validateURL, scanControler);
+
+// Export the router
+export default router;

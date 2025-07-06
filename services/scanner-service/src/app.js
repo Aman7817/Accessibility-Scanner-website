@@ -6,7 +6,7 @@ app.use(express.json);
 app.use(rateLimiter);
 
 
-import { scanRoutes } from "./routes/scan.routes.js";
+import  scanRoutes  from "./routes/scan.routes.js";
 app.use("/api/v1/scan", scanRoutes);
 
 export {

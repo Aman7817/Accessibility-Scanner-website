@@ -14,5 +14,26 @@ router.use(
 
     })
 );
+router.use(
+
+    "/suggest", 
+    createProxyMiddleware({
+        target: process.env.FIX_SUGGESTION_SERVICE_URL,
+        changeOrigin: true,
+        // Optional: rewrite path if the fix-suggestion-service expects a different base path
+        // pathRewrite: { '^/api/v1/fix-suggestions/suggest': '' },
+    })
+);
+
+// proxy to the report service
+router.use(
+    "/reports",
+    createProxyMiddleware({
+        target: process.env.REPORT_SERVICE_URL,
+        changeOrigin: true,
+        // Optional: rewrite path if the report-service expects a different base path
+        // pathRewrite: { '^/api/v1/reports': '' },
+    })
+);
 
 export default router;

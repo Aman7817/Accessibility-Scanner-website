@@ -1,6 +1,6 @@
 import Router from 'express';
 
-import {generateFixSuggestions} from '../controllers/fixSuggestionController.js'; 
+import {generateFixSuggestions} from '../controllers/suggestion.controller.js'; 
 
 const router = Router();
 

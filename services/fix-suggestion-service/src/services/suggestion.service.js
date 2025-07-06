@@ -1,4 +1,4 @@
-import { violationMap } from "../utils/violationMap";
+import { violationMap } from "../utils/violationMap.js";
 // import { openaiSuggest } from '../config/openai.config.js'; // optional
 
 

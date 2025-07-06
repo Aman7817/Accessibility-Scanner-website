@@ -27,4 +27,6 @@ app.use(notFoundHandler);
 // Global error handler
 app.use(errorHandler);
 
-export default app;
+export { 
+    app
+};
