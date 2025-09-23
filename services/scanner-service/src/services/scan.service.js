@@ -1,53 +1,61 @@
-import {asyncHandler} from "../utils/asyncHandler.js";
-import {ApiError} from "../utils/ApiError.js";
-import { puppeteerConfig } from "../config/puppeteer.config.js";
-import { axeConfig } from "../config/axe.config.js";
-import axe from "axe-core";
+import puppeteer from 'puppeteer';
+import { AxePuppeteer } from '@axe-core/puppeteer';
+import {ApiError} from '../utils/ApiError.js';
 
-const scanservice = asyncHandler(async(url) => {
-    let browser;
 
-    try {
-        browser = await puppeteer.launch(puppeteerConfig);
-        const page = await browser.newPage();
-        await page.setViewport({width:1280,height: 800});
-        await page.setBypassCSP(true); // Disable Content Security Policy as needed:contentReference[oaicite:4]{index=4}
+export async function scanservice(url) {
+  let browser;
+  try {
+    console.log('1) Launching browser...');
+    browser = await puppeteer.launch({
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      timeout: 30000,
+    });
+    console.log('2) Browser launched.');
 
-        await page.goto(url, { waitUntil: 'networkidle2' });   
-         // Inject axe-core into the page 
-        await page.evaluate(axe.source);
-        // Run axe-core on the page
-        const axeResults = await page.evaluate(async() => await axe.run());
+    const page = await browser.newPage();
+    console.log('3) New page.');
 
-        // Prepaper summary counts
-        const {violations,passes,incomplete,inapplicable} = axeResults;
-        const summary = {
-            totalViolations: violations.length,
-            totalPasses: passes.length,
-            totalIncomplete: incomplete.length,
-            totalInapplicable: inapplicable.length
-        };
-        return {summary,violations}
-    } catch (error) {
-        throw new ApiError("Accessibility scan failed", 500);
-    } finally {
-        if (browser) {  
-            await browser.close();
-            }
-        }
-});
+    console.log('4) Navigating to:', url);
 
-export {
-    scanservice
+    // ⏱ Add Promise.race timeout here
+    const scanPromise = (async () => {
+      await page.goto(url, {
+        waitUntil: 'domcontentloaded',
+        timeout: 15000, // wait 15s max for page load
+      });
+      console.log('5) Page loaded.');
+
+      console.log('6) Running axe-puppeteer scan...');
+      const results = await new AxePuppeteer(page).include('body').analyze();
+      console.log('7) axe-puppeteer scan complete.');
+
+      const { violations, passes, incomplete, inapplicable } = results;
+      const summary = {
+        totalViolations: violations.length,
+        totalPasses: passes.length,
+        totalIncomplete: incomplete.length,
+        totalInapplicable: inapplicable.length,
+      };
+
+      return { summary, violations };
+    })();
+
+    // Timeout fallback: 20s max for whole scan
+    const timeoutPromise = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error('Scan timed out')), 20000)
+    );
+
+    // Use whichever completes first
+    return await Promise.race([scanPromise, timeoutPromise]);
+  } catch (err) {
+    console.error('❌ scanservice error:', err.message);
+    throw new ApiError(err.message || 'Accessibility scan failed', 500);
+  } finally {
+    if (browser) {
+      console.log('Closing browser');
+      await browser.close();
+    }
+  }
 }
-
-/*
-✅ Final Verdict:
-code kaam ye karega:
-
-Kisi bhi URL pe jaake page load karega.
-
-Axe-core se run karke accessibility violations dhoondega.
-
-Summary aur detailed violations return karega.
- */

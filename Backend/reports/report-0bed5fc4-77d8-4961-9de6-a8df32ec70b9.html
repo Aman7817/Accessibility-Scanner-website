@@ -1,0 +1,79 @@
+
+      <!doctype html>
+      <html>
+      <head><meta charset="utf-8"><title>A11y Report - https://example.com</title>
+        <style>
+          body { font-family: Arial, sans-serif; margin: 20px; color:#222; background:#f7f8fb; }
+          .header { display:flex; align-items:center; gap:16px; margin-bottom:12px }
+          .badge { padding:6px 10px; border-radius:6px; background:#eef; font-weight:700;}
+          .summary pre { background:#fff;padding:10px;border-radius:6px;overflow:auto; }
+          .violation { margin-bottom:12px;padding:12px;border-left:4px solid #e74c3c;background:#fff9f9 }
+          a.doc { font-size:0.9em; color:#0366d6; }
+          img { max-width:100%; border:1px solid #ddd; margin-top:12px; }
+        </style>
+      </head>
+      <body>
+        <div class="header">
+          <h1 style="margin:0">Accessibility Report</h1>
+          <div class="badge">Score: 94/100 — <span style="color:green">A</span></div>
+        </div>
+        <p>URL: <a href="https://example.com" target="_blank" rel="noreferrer">https://example.com</a></p>
+        <p>9/21/2025, 9:44:59 AM</p>
+
+        <div class="summary">
+          <h2>Summary</h2>
+          <pre>{
+  "url": "https://example.com",
+  "total": 1,
+  "byImpact": {
+    "serious": 1
+  },
+  "score": 94
+}</pre>
+        </div>
+
+        <div>
+          <h2>Violations & recommended fixes</h2>
+          
+            <div class="violation">
+              <h3>html-has-lang — serious</h3>
+              <p><html> element must have a lang attribute</p>
+              <p><b>Fix:</b> Review documentation and apply WCAG guidance for this rule. </p>
+              <details><summary>Nodes (1)</summary>
+                <pre>[
+  {
+    "any": [
+      {
+        "id": "has-lang",
+        "data": {
+          "messageKey": "noLang"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "The <html> element does not have a lang attribute"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<html>",
+    "target": [
+      "html"
+    ],
+    "failureSummary": "Fix any of the following:\n  The <html> element does not have a lang attribute"
+  }
+]</pre>
+              </details>
+            </div>
+          
+        </div>
+
+        <hr/>
+        <h3>Screenshot</h3>
+        <img src="screenshot-f675be5a-4d8b-4e21-ab5b-5fd97023ab19.png" alt="screenshot of https://example.com" />
+
+        <hr/>
+        <p style="font-size:0.9em;color:#555">Automated checks cover only a subset of WCAG success criteria. Manual review is required for full conformance. See <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">W3C WCAG</a>.</p>
+      </body>
+      </html>
+    

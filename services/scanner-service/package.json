@@ -6,7 +6,6 @@
   "directories": {
     "test": "tests"
   },
-  
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon src/index.js"
@@ -17,6 +16,7 @@
   "type": "module",
   "dependencies": {
     "@axe-core/puppeteer": "^4.10.2",
+    "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",

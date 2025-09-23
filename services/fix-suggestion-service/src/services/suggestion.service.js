@@ -1,26 +1,38 @@
+// suggestion.service.js
 import { violationMap } from "../utils/violationMap.js";
-// import { openaiSuggest } from '../config/openai.config.js'; // optional
 
-
-export async function generateSuggestions(req, res) {
+export async function generateSuggestions(violations) {
     try {
-        const { violations } = req.body;
-
-        if (!violations || !Array.isArray(violations)) {
-            return res.status(400).json({ error: "Invalid input format. 'violations' should be an array." });
+        if (!Array.isArray(violations)) {
+            throw new Error("Invalid input: violations must be an array.");
         }
 
         const suggestions = violations.map(violation => {
-            const suggestion = violationMap[violation];
-            return suggestion ? { violation, suggestion } : { violation, suggestion: "No suggestion available" };
+            const id = typeof violation === 'string' ? violation : violation.id;
+
+            const mapped = violationMap[id];
+
+            if (typeof mapped === 'function') {
+                return {
+                    violation: id,
+                    suggestion: mapped(violation)
+                };
+            } else if (typeof mapped === 'string') {
+                return {
+                    violation: id,
+                    suggestion: mapped
+                };
+            } else {
+                return {
+                    violation: id,
+                    suggestion: "No suggestion available"
+                };
+            }
         });
 
-        // Optionally, you can integrate OpenAI for more advanced suggestions
-        // const openaiSuggestions = await openaiSuggest(violations);
-
-        return res.status(200).json({ suggestions });
+        return suggestions;
     } catch (error) {
         console.error("Error generating suggestions:", error);
-        return res.status(500).json({ error: "Internal server error" });
+        throw error;
     }
 }

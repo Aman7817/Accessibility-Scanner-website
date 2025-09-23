@@ -5,10 +5,11 @@ import { errorHandler } from '../../report-service/src/utils/errorHandler.js';
 
 const app = express();
 
-app.use(express.json()); // Middleware to parse JSON request bodies
+app.use(express.json());
 
-app.use('/api/v1/fix-suggestions', fixSuggestionRoutes); // Mount fix suggestion routes
+// ✅ Mount under /api/v1/fix-suggestions
+app.use('/api/v1', fixSuggestionRoutes);
 
-app.use (errorHandler); // Global error handler
+app.use(errorHandler);
 
 export default app;
