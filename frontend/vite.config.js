@@ -17,6 +17,16 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'), // 👈 Add this
     },
   },
+    theme: {
+    extend: {
+      fontSize: {
+        sm: '0.875rem',   // 14px
+        base: '0.95rem',  // ~15px (default 16px se chhota)
+        lg: '1.125rem',   // 18px
+        xl: '1.25rem',    // 20px
+      },
+    },
+  },
   plugins: [
     tailwindcss(),
   ],

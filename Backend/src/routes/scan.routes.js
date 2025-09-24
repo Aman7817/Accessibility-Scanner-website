@@ -14,6 +14,7 @@ router.get('/', scanController.listScans);
 
 // report related routes
 router.get('/reports/:id', scanController.getReport); 
+router.get('/reports/:id/download', scanController.downloadReport);
 router.get('/reports', scanController.listReports);
 // delete scan route
 router.delete('/:id', scanController.deleteScan);

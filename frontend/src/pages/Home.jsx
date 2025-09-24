@@ -250,8 +250,8 @@
 
 import React, { useState, useEffect } from 'react';
 import HeroSection from '../components/HeroSection';
-import StatsSection from '../components/StatsSection';
-import RecentScans from '../components/RecentScans';
+import BenefitsAndFAQ from '../components/BenefitsAndFAQ';
+import Footer from '../components/Footer';
 import api from '../utils/axios';
 import { useLocation } from 'react-router-dom';
 
@@ -358,7 +358,7 @@ const Home = () => {
       />
       
       <div className="container mx-auto px-4 py-8">
-        <StatsSection />
+        
         
         {/* Error Display */}
         {error && (
@@ -413,141 +413,12 @@ const Home = () => {
         <div className="max-w-4xl mx-auto">
           
         </div>
+        <BenefitsAndFAQ/>
       </div>
+      
     </div>
   );
 };
 
 export default Home;
 
-// import React, { useState, useEffect } from 'react';
-// import HeroSection from '../components/HeroSection';
-// import StatsSection from '../components/StatsSection';
-// import RecentScans from '../components/RecentScans';
-// import api from '../utils/axios';
-// import { useLocation } from 'react-router-dom';
-
-// const Home = () => {
-//   const [url, setUrl] = useState('');
-//   const [recentScans, setRecentScans] = useState([]);
-//   const [loading, setLoading] = useState(false);
-//   const [scanResult, setScanResult] = useState(null);
-//   const [error, setError] = useState('');
-//   const location = useLocation();
-
-
-  
-//   const getScoreColor = (score) => {
-//     if (score >= 85) return 'bg-green-100 text-green-700';
-//     if (score >= 70) return 'bg-yellow-100 text-yellow-700';
-//     return 'bg-red-100 text-red-700';
-//   };
-
-//   useEffect(() => {
-//     const fetchRecent = async () => {
-//       try {
-//         const res = await api.get('/reports');
-//         const items = res.data?.data ?? [];
-        
-//         const mapped = items.map((r) => ({
-//           id: r._id,
-//           date: new Date(r.createdAt).toLocaleString(),
-//           url: r.url,
-//           score: r.score || r.summary?.score || 0,
-//           violations: r.violationsCount || r.summary?.total || 0,
-//           warnings: 0,
-//           htmlReportFileName: r.htmlReportFileName,
-//         }));
-        
-//         setRecentScans(mapped);
-//       } catch (err) {
-//         console.warn('Could not load recent scans', err);
-//       }
-//     };
-//     fetchRecent();
-//   }, []);
-
-//   const handleScan = async (e) => {
-//     e.preventDefault();
-//     if (!url) return setError('Please enter a URL');
-
-//     setLoading(true);
-//     setError('');
-
-//     try {
-//       const res = await api.post('/scan/start-scan', { url });
-//       const data = res.data.data;
-
-//       // ✅ Correct report URL construction
-//       const reportUrl = data.reportLinks?.html || '';
-//       const htmlReportFileName = reportUrl.split('/').pop();
-
-//       // Update recent scans
-//       const newScan = {
-//         id: data.reportId,
-//         date: new Date().toLocaleString(),
-//         url: url,
-//         score: data.score,
-//         violations: data.violations,
-//         htmlReportFileName: htmlReportFileName
-//       };
-
-//       setRecentScans(prev => [newScan, ...prev.slice(0, 9)]);
-//       setScanResult(data);
-      
-//       // ✅ Correct report URL - localhost:5000
-//       const fullReportUrl = `http://localhost:5000${reportUrl}`;
-//       window.open(fullReportUrl, '_blank');
-
-//     } catch (err) {
-//       setError(err.response?.data?.message || 'Scan failed');
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <HeroSection 
-//         url={url}
-//         setUrl={setUrl}
-//         handleScan={handleScan}
-//         loading={loading}
-//         scanningProgress={scanningProgress}
-//         error={error}
-//       />
-      
-//       <div className="container mx-auto px-4">
-//         <StatsSection />
-        
-//         {error && (
-//           <div className="text-red-600 my-4 p-3 bg-red-50 rounded">
-//             {error}
-//           </div>
-//         )}
-        
-//         {scanResult && (
-//           <div className="bg-white rounded p-4 shadow my-6">
-//             <h3 className="font-semibold mb-2">Latest Scan — {url}</h3>
-//             <p>Score: <strong>{scanResult.score}%</strong></p>
-//             <p>Total violations: {scanResult.violations}</p>
-//             {scanResult.reportLinks?.html && (
-//               <a
-//                 href={`http://localhost:5000${scanResult.reportLinks.html}`}
-//                 target="_blank" 
-//                 rel="noreferrer"
-//                 className="text-blue-600 underline"
-//               >
-//                 View full report
-//               </a>
-//             )}
-//           </div>
-//         )}
-
-        
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Home;

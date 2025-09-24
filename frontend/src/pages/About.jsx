@@ -1,5 +1,5 @@
 import React from "react";
-
+import MainLayout from "../layouts/MainLayout";
 const About = () => {
   return (
     <div className="container mx-auto px-4 py-12">
@@ -215,7 +215,9 @@ const About = () => {
           </button>
         </div>
       </section>
+      
     </div>
+    
   );
 };
 

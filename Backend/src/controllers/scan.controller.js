@@ -3,6 +3,7 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 import Scan from "../models/scan.model.js";
 import Report from "../models/report.model.js";
 import { ApiError } from "../utils/ApiError.js";
+import { generateScanReportPDF , generateTextReport} from "../utils/genratePdf.js";
 import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
@@ -283,6 +284,58 @@ const deleteScan = asyncHandler(async (req, res, next) => {
 //   res.send(JSON.stringify(items, null, 2));
 // });
 
+// scan.controller.js में नया function add करें
+
+
+const downloadReport = asyncHandler(async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    
+    // Find the report with scan details
+    const report = await Report.findById(id).populate('scan');
+    if (!report) {
+      return res.status(404).json({ 
+        success: false, 
+        message: 'Report not found' 
+      });
+    }
+
+    // Check if we have basic report data
+    if (!report.summary && report.violationsCount === undefined) {
+      return res.status(400).json({ 
+        success: false, 
+        message: 'No scan data available for download' 
+      });
+    }
+
+    try {
+      // Try to generate PDF using the utility function
+      const pdfBuffer = await generateScanReportPDF(report);
+      
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', `attachment; filename=security-scan-${id}.pdf`);
+      res.send(pdfBuffer);
+      
+    } catch (pdfError) {
+      console.warn('PDF generation failed, falling back to text:', pdfError);
+      
+      // Fallback to text report if PDF fails
+      const textContent = generateTextReport(report);
+      res.setHeader('Content-Type', 'text/plain');
+      res.setHeader('Content-Disposition', `attachment; filename=security-scan-${id}.txt`);
+      res.send(textContent);
+    }
+    
+  } catch (error) {
+    console.error('Download report error:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Failed to download report' 
+    });
+  }
+});
+
+
 
 export const scanController = {
   startScan,
@@ -292,5 +345,6 @@ export const scanController = {
   getJsonReport,
   getScreenshot,
   listReports,
-  deleteScan
+  deleteScan,
+  downloadReport
 };

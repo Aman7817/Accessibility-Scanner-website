@@ -369,7 +369,7 @@ const Profile = () => {
   const handleLogout = async () => {
     if (window.confirm("Are you sure you want to logout?")) {
       try {
-        await api.post("/logout");
+        await api.post("/users/logout");
         localStorage.removeItem("token");
         window.location.href = "/login";
       } catch (error) {
@@ -382,7 +382,7 @@ const Profile = () => {
   const handleDeleteAccount = async () => {
     if (window.confirm("This action cannot be undone. Delete your account?")) {
       try {
-        await api.delete("/deleteMe");
+        await api.delete("/users/deleteMe");
         localStorage.removeItem("token");
         window.location.href = "/";
       } catch (error) {
@@ -408,7 +408,7 @@ const Profile = () => {
       {/* Header */}
       <header className="bg-white shadow-md border-b">
         <div className="px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-900">YourWebsiteName</h1>
+          <h1 className="text-2xl font-bold text-gray-900">WebLoom</h1>
           <button className="text-blue-600 font-medium">Profile</button>
         </div>
       </header>
