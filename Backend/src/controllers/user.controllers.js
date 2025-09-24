@@ -157,13 +157,132 @@ const logOutUser = asyncHandler(async (req, res) => {
 });
 
 
-const getCurrentUser = asyncHandler(async (req, res) => {
-    // Fetch the current user's details from the request object
-    const user = req.user;
-    if (!user) {
-        throw new ApiError(404, "User not found");
+// async function getCurrentUser(req) {
+//   if (req.user && req.user._id) {
+//     return await User.findById(req.user._id);
+//   }
+
+//   // fallback: use email from env or create a demo user
+//   const demoEmail = process.env.DEMO_USER_EMAIL || "demo@local";
+//   let user = await User.findOne({ email: demoEmail });
+//   if (!user) {
+//     user = await User.create({ email: demoEmail, name: "Demo User" });
+//   }
+//   return user;
+// }
+// Get current user profile
+const getMe = asyncHandler(async (req, res) => {
+  // req.user already set by verifyjwt middleware
+  const user = req.user;
+  
+  return res.status(200).json({
+    success: true,
+    data: {
+      firstName: user.firstName || user.name?.split(' ')[0] || '',
+      lastName: user.lastName || user.name?.split(' ').slice(1).join(' ') || '',
+      email: user.email,
+      bio: user.bio || "",
+      phone: user.phone || "",
+      joinDate: user.createdAt
     }
-    return res.status(200).json(new ApiResponse(200, user, "User fetched successfully"));
+  });
 });
+
+// Update user profile
+const updateMe = asyncHandler(async (req, res) => {
+  const user = req.user;
+  const { firstName, lastName, email, bio, phone } = req.body;
+
+  // Check if email already exists (if changing email)
+  if (email && email !== user.email) {
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      throw new ApiError(400, "Email already exists");
+    }
+  }
+
+  // Update fields
+  const updateData = {};
+  if (firstName !== undefined) updateData.firstName = firstName;
+  if (lastName !== undefined) updateData.lastName = lastName;
+  if (email !== undefined) updateData.email = email;
+  if (bio !== undefined) updateData.bio = bio;
+  if (phone !== undefined) updateData.phone = phone;
+
+  const updatedUser = await User.findByIdAndUpdate(
+    user._id,
+    { $set: updateData },
+    { new: true }
+  ).select("-password -refreshToken");
+
+  res.status(200).json({
+    success: true,
+    message: "Profile updated successfully",
+    data: {
+      firstName: updatedUser.firstName,
+      lastName: updatedUser.lastName,
+      email: updatedUser.email,
+      bio: updatedUser.bio,
+      phone: updatedUser.phone,
+      joinDate: updatedUser.createdAt
+    }
+  });
+});
+const changePassword = asyncHandler(async (req, res) => {
+  const { currentPassword, newPassword } = req.body;
+
+  // Fetch fresh user with password field
+  const user = await User.findById(req.user._id).select("+password");
+
+  if (!user) {
+    throw new ApiError(404, "User not found");
+  }
+
+  // Verify current password
+  const isPasswordValid = await user.isPasswordCorrect(currentPassword);
+  if (!isPasswordValid) {
+    throw new ApiError(400, "Current password is incorrect");
+  }
+
+  // Update password
+  user.password = newPassword;
+  await user.save({ validateBeforeSave: false });
+
+  res.status(200).json({
+    success: true,
+    message: "Password changed successfully"
+  });
+});
+
+// Delete user account
+const deleteMe = asyncHandler(async (req, res) => {
+  const user = req.user;
+  const { password } = req.body; // Optional: confirm password before deletion
+
+  if (password) {
+    const isPasswordValid = await user.isPasswordCorrect(password);
+    if (!isPasswordValid) {
+      throw new ApiError(400, "Password is incorrect");
+    }
+  }
+
+  await User.findByIdAndDelete(user._id);
+
+  res.status(200).json({
+    success: true,
+    message: "Account deleted successfully"
+  });
+});
+
 // Export controllers
-export { registerUser, loginUser, logOutUser ,getCurrentUser };
+export {
+    registerUser, 
+    loginUser, 
+    logOutUser,
+    getMe,
+    updateMe,
+    changePassword,
+    deleteMe
+
+   
+};

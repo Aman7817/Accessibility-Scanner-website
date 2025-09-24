@@ -1,0 +1,2332 @@
+
+      <!doctype html>
+      <html>
+      <head><meta charset="utf-8"><title>A11y Report - https://safaribags.com/</title>
+        <style>
+          body { font-family: Arial, sans-serif; margin: 20px; color:#222; background:#f7f8fb; }
+          .header { display:flex; align-items:center; gap:16px; margin-bottom:12px }
+          .badge { padding:6px 10px; border-radius:6px; background:#eef; font-weight:700;}
+          .summary pre { background:#fff;padding:10px;border-radius:6px;overflow:auto; }
+          .violation { margin-bottom:12px;padding:12px;border-left:4px solid #e74c3c;background:#fff9f9 }
+          a.doc { font-size:0.9em; color:#0366d6; }
+          img { max-width:100%; border:1px solid #ddd; margin-top:12px; }
+        </style>
+      </head>
+      <body>
+        <div class="header">
+          <h1 style="margin:0">Accessibility Report</h1>
+          <div class="badge">Score: 70/100 — <span style="color:red">RISK</span></div>
+        </div>
+        <p>URL: <a href="https://safaribags.com/" target="_blank" rel="noreferrer">https://safaribags.com/</a></p>
+        <p>9/23/2025, 9:07:10 AM</p>
+
+        <div class="summary">
+          <h2>Summary</h2>
+          <pre>{
+  "url": "https://safaribags.com/",
+  "total": 3,
+  "byImpact": {
+    "critical": 2,
+    "serious": 1
+  },
+  "score": 70
+}</pre>
+        </div>
+
+        <div>
+          <h2>Violations & recommended fixes</h2>
+          
+            <div class="violation">
+              <h3>image-alt — critical</h3>
+              <p>Images must have alternative text</p>
+              <p><b>Fix:</b> Add descriptive alt text to images that convey meaning. Avoid using empty alt attributes for informative images. <a class="doc" href="https://www.w3.org/WAI/tutorials/images/decision-tree/" target="_blank">Read more</a></p>
+              <details><summary>Nodes (16)</summary>
+                <pre>[
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img src=\"//safaribags.com/cdn/shop/files/Artboard1_e98290df-7228-4b10-ad02-789963309237_200x.jpg?v=1738579631\" loading=\"lazy\">",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(2) > .product-item__info.product-item__info--with-button > .related-pdp > a:nth-child(2) > img[loading=\"lazy\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  },
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img src=\"//safaribags.com/cdn/shop/files/Artboard1_9d2f042b-ea52-455c-843d-a724b0bb408d_200x.jpg?v=1738642554\" loading=\"lazy\">",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(2) > .product-item__info.product-item__info--with-button > .related-pdp > .active > img[loading=\"lazy\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  },
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img src=\"//safaribags.com/cdn/shop/files/Artboard1_200x.jpg?v=1738557108\" loading=\"lazy\">",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(4) > .product-item__info.product-item__info--with-button > .related-pdp > a:nth-child(2) > img[loading=\"lazy\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  },
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img src=\"//safaribags.com/cdn/shop/files/Artboard1_f39165cd-b8fd-47d5-b76c-e7956275566c_200x.jpg?v=1738573882\" loading=\"lazy\">",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(4) > .product-item__info.product-item__info--with-button > .related-pdp > .active > img[loading=\"lazy\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  },
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img src=\"//safaribags.com/cdn/shop/files/HeritageSWPDPArtboard1_200x.jpg?v=1739354424\" loading=\"lazy\">",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(6) > .product-item__info.product-item__info--with-button > .related-pdp > .active > img[loading=\"lazy\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  },
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img src=\"//safaribags.com/cdn/shop/files/HeritageSGPDPArtboard1_200x.jpg?v=1739342243\" loading=\"lazy\">",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(6) > .product-item__info.product-item__info--with-button > .related-pdp > a:nth-child(3) > img[loading=\"lazy\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  },
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img src=\"//safaribags.com/cdn/shop/files/Artboard1_9d2f042b-ea52-455c-843d-a724b0bb408d_200x.jpg?v=1738642554\" loading=\"lazy\">",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(10) > .product-item__info.product-item__info--with-button > .related-pdp > a:nth-child(2) > img[loading=\"lazy\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  },
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img src=\"//safaribags.com/cdn/shop/files/Artboard1_e98290df-7228-4b10-ad02-789963309237_200x.jpg?v=1738579631\" loading=\"lazy\">",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(10) > .product-item__info.product-item__info--with-button > .related-pdp > .active > img[loading=\"lazy\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  },
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img src=\"//safaribags.com/cdn/shop/files/45Angle_02_2_200x.jpg?v=1741153141\" loading=\"lazy\">",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(12) > .product-item__info.product-item__info--with-button > .related-pdp > a:nth-child(2) > img[loading=\"lazy\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  },
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img src=\"//safaribags.com/cdn/shop/files/AeroliteAmazonPDP1-100_06ce2caf-e544-4cf0-9aec-ea0e0974c5a1_200x.jpg?v=1743597840\" loading=\"lazy\">",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(12) > .product-item__info.product-item__info--with-button > .related-pdp > .active > img[loading=\"lazy\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  },
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img src=\"//safaribags.com/cdn/shop/files/HeritageSWPDPArtboard1_200x.jpg?v=1739354424\" loading=\"lazy\">",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(14) > .product-item__info.product-item__info--with-button > .related-pdp > a:nth-child(2) > img[loading=\"lazy\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  },
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img src=\"//safaribags.com/cdn/shop/files/HeritageSGPDPArtboard1_200x.jpg?v=1739342243\" loading=\"lazy\">",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(14) > .product-item__info.product-item__info--with-button > .related-pdp > .active > img[loading=\"lazy\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  },
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img src=\"//safaribags.com/cdn/shop/files/Artboard1_f39165cd-b8fd-47d5-b76c-e7956275566c_200x.jpg?v=1738573882\" loading=\"lazy\">",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(20) > .product-item__info.product-item__info--with-button > .related-pdp > a:nth-child(2) > img[loading=\"lazy\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  },
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img src=\"//safaribags.com/cdn/shop/files/Artboard1_200x.jpg?v=1738557108\" loading=\"lazy\">",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(20) > .product-item__info.product-item__info--with-button > .related-pdp > .active > img[loading=\"lazy\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  },
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img src=\"//safaribags.com/cdn/shop/files/PDP10_2fb4dc2d-a6f1-4704-a461-0228f62307c0_200x.jpg?v=1688622943\" loading=\"lazy\">",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(22) > .product-item__info.product-item__info--with-button > .related-pdp > a:nth-child(2) > img[loading=\"lazy\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  },
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img src=\"//safaribags.com/cdn/shop/files/PDP10_200x.jpg?v=1688622468\" loading=\"lazy\">",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(22) > .product-item__info.product-item__info--with-button > .related-pdp > .active > img[loading=\"lazy\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  }
+]</pre>
+              </details>
+            </div>
+          
+            <div class="violation">
+              <h3>link-name — serious</h3>
+              <p>Links must have discernible text</p>
+              <p><b>Fix:</b> Review documentation and apply WCAG guidance for this rule. </p>
+              <details><summary>Nodes (29)</summary>
+                <pre>[
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a class=\"slideshow__slide-inner\" href=\"/products/safari-trackr-gps-enabled-black-trolley-bag-with-boat-tag-tsa-lock-dual-wheels-and-wet-pouch-organized-interior\">",
+    "target": [
+      ".slideshow__slide-inner"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"/products/safari-horizon-trolley-bag-with-wide-trolley-handle-tsa-lock-and-anti-theft-zipper-sea-foam\" class=\"\"><img src=\"//safaribags.com/cdn/shop/files/Artboard1_e98290df-7228-4b10-ad02-789963309237_200x.jpg?v=1738579631\" loading=\"lazy\"><span>Cyan</span></a>",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(2) > .product-item__info.product-item__info--with-button > .related-pdp > a:nth-child(2)"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"/products/safari-horizon-trolley-bag-with-wide-trolley-handle-tsa-lock-and-anti-theft-zipper-sun-yellow\" class=\"active\"><img src=\"//safaribags.com/cdn/shop/files/Artboard1_9d2f042b-ea52-455c-843d-a724b0bb408d_200x.jpg?v=1738642554\" loading=\"lazy\"><span>Yellow</span></a>",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(2) > .product-item__info.product-item__info--with-button > .related-pdp > .active"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"/products/safari-trunk-trolley-bag-with-front-handle-tsa-lock-and-anti-theft-zipper-gray\" class=\"\"><img src=\"//safaribags.com/cdn/shop/files/Artboard1_200x.jpg?v=1738557108\" loading=\"lazy\"><span>Black</span></a>",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(4) > .product-item__info.product-item__info--with-button > .related-pdp > a:nth-child(2)"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"/products/safari-trunk-trolley-bag-with-front-handle-tsa-lock-and-anti-theft-zipper-cyan\" class=\"active\"><img src=\"//safaribags.com/cdn/shop/files/Artboard1_f39165cd-b8fd-47d5-b76c-e7956275566c_200x.jpg?v=1738573882\" loading=\"lazy\"><span>Cyan</span></a>",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(4) > .product-item__info.product-item__info--with-button > .related-pdp > .active"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"/products/safari-heritage-trolley-bag-with-scratch-resistant-texture-tsa-lock-and-anti-theft-zipper-ivory\" class=\"active\"><img src=\"//safaribags.com/cdn/shop/files/HeritageSWPDPArtboard1_200x.jpg?v=1739354424\" loading=\"lazy\"><span>White</span></a>",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(6) > .product-item__info.product-item__info--with-button > .related-pdp > .active"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"/products/safari-heritage-trolley-bag-with-scratch-resistant-texture-tsa-lock-and-anti-theft-zipper-opal-grey\" class=\"\"><img src=\"//safaribags.com/cdn/shop/files/HeritageSGPDPArtboard1_200x.jpg?v=1739342243\" loading=\"lazy\"><span>Black</span></a>",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(6) > .product-item__info.product-item__info--with-button > .related-pdp > a:nth-child(3)"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"/products/safari-horizon-trolley-bag-with-wide-trolley-handle-tsa-lock-and-anti-theft-zipper-sun-yellow\" class=\"\"><img src=\"//safaribags.com/cdn/shop/files/Artboard1_9d2f042b-ea52-455c-843d-a724b0bb408d_200x.jpg?v=1738642554\" loading=\"lazy\"><span>Yellow</span></a>",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(10) > .product-item__info.product-item__info--with-button > .related-pdp > a:nth-child(2)"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"/products/safari-horizon-trolley-bag-with-wide-trolley-handle-tsa-lock-and-anti-theft-zipper-sea-foam\" class=\"active\"><img src=\"//safaribags.com/cdn/shop/files/Artboard1_e98290df-7228-4b10-ad02-789963309237_200x.jpg?v=1738579631\" loading=\"lazy\"><span>Cyan</span></a>",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(10) > .product-item__info.product-item__info--with-button > .related-pdp > .active"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"/products/safari-select-aerolite-black-cabin-trolley-bag-with-laptop-compartment-tsa-lock-dual-wheels-and-anti-theft-zipper\" class=\"\"><img src=\"//safaribags.com/cdn/shop/files/45Angle_02_2_200x.jpg?v=1741153141\" loading=\"lazy\"><span></span></a>",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(12) > .product-item__info.product-item__info--with-button > .related-pdp > a:nth-child(2)"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"/products/safari-select-aerolite-blue-cabin-trolley-bag-with-laptop-compartment-tsa-lock-dual-wheels-and-anti-theft-zipper\" class=\"active\">",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(12) > .product-item__info.product-item__info--with-button > .related-pdp > .active"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"/products/safari-heritage-trolley-bag-with-scratch-resistant-texture-tsa-lock-and-anti-theft-zipper-ivory\" class=\"\"><img src=\"//safaribags.com/cdn/shop/files/HeritageSWPDPArtboard1_200x.jpg?v=1739354424\" loading=\"lazy\"><span>White</span></a>",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(14) > .product-item__info.product-item__info--with-button > .related-pdp > a:nth-child(2)"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"/products/safari-heritage-trolley-bag-with-scratch-resistant-texture-tsa-lock-and-anti-theft-zipper-opal-grey\" class=\"active\"><img src=\"//safaribags.com/cdn/shop/files/HeritageSGPDPArtboard1_200x.jpg?v=1739342243\" loading=\"lazy\"><span>Black</span></a>",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(14) > .product-item__info.product-item__info--with-button > .related-pdp > .active"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"/products/safari-trunk-trolley-bag-with-front-handle-tsa-lock-and-anti-theft-zipper-cyan\" class=\"\"><img src=\"//safaribags.com/cdn/shop/files/Artboard1_f39165cd-b8fd-47d5-b76c-e7956275566c_200x.jpg?v=1738573882\" loading=\"lazy\"><span>Cyan</span></a>",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(20) > .product-item__info.product-item__info--with-button > .related-pdp > a:nth-child(2)"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"/products/safari-trunk-trolley-bag-with-front-handle-tsa-lock-and-anti-theft-zipper-gray\" class=\"active\"><img src=\"//safaribags.com/cdn/shop/files/Artboard1_200x.jpg?v=1738557108\" loading=\"lazy\"><span>Black</span></a>",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(20) > .product-item__info.product-item__info--with-button > .related-pdp > .active"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"/products/airpro-soft-luggage-black\" class=\"\"><img src=\"//safaribags.com/cdn/shop/files/PDP10_2fb4dc2d-a6f1-4704-a461-0228f62307c0_200x.jpg?v=1688622943\" loading=\"lazy\"><span>Black</span></a>",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(22) > .product-item__info.product-item__info--with-button > .related-pdp > a:nth-child(2)"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"/products/airpro-soft-luggage-with-tsa-lock-dual-wheels-and-detailed-interiors-grey\" class=\"active\"><img src=\"//safaribags.com/cdn/shop/files/PDP10_200x.jpg?v=1688622468\" loading=\"lazy\"><span>Grey</span></a>",
+    "target": [
+      "#block-template--19416126095577__featured_collections_rHm9XB-collection_yrFyk6 > .scroller > .product-list__inner.product-list__inner--scroller.hide-scrollbar > product-item:nth-child(22) > .product-item__info.product-item__info--with-button > .related-pdp > .active"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"https://safaribags.com/collections/all?sort_by=manual&amp;filter.v.price.gte=&amp;filter.v.price.lte=&amp;filter.p.m.custom.colors_new=Black\" class=\"multi-column__image-wrapper \" style=\"max-width: 100%; width: 60px\">",
+    "target": [
+      "#block-template--19416126095577__1657716863f313d00a-21905044-56cf-4868-8ab9-a520544353a0 > .multi-column__image-wrapper"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"https://safaribags.com/collections/all?sort_by=manual&amp;filter.v.price.gte=&amp;filter.v.price.lte=&amp;filter.p.m.custom.colors_new=Grey\" class=\"multi-column__image-wrapper \" style=\"max-width: 100%; width: 60px\">",
+    "target": [
+      "#block-template--19416126095577__1657716863f313d00a-ddbe0017-0842-4699-9d2f-a31e572adb61 > .multi-column__image-wrapper"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"https://safaribags.com/collections/all?sort_by=manual&amp;filter.v.price.gte=&amp;filter.v.price.lte=&amp;filter.p.m.custom.colors_new=Blue\" class=\"multi-column__image-wrapper \" style=\"max-width: 100%; width: 60px\">",
+    "target": [
+      "#block-template--19416126095577__1657716863f313d00a-1657716863d038c3f4-2 > .multi-column__image-wrapper"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"https://safaribags.com/collections/all?sort_by=manual&amp;filter.v.price.gte=&amp;filter.v.price.lte=&amp;filter.p.m.custom.colors_new=Red\" class=\"multi-column__image-wrapper \" style=\"max-width: 100%; width: 60px\">",
+    "target": [
+      "#block-template--19416126095577__1657716863f313d00a-1657716863d038c3f4-0 > .multi-column__image-wrapper"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"https://safaribags.com/collections/all?sort_by=manual&amp;filter.v.price.gte=&amp;filter.v.price.lte=&amp;filter.p.m.custom.colors_new=Purple\" class=\"multi-column__image-wrapper \" style=\"max-width: 100%; width: 60px\">",
+    "target": [
+      "#block-template--19416126095577__1657716863f313d00a-8d797c04-65f6-454a-bf90-9ea17e636b13 > .multi-column__image-wrapper"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"https://safaribags.com/collections/all?sort_by=manual&amp;filter.v.price.gte=&amp;filter.v.price.lte=&amp;filter.p.m.custom.colors_new=Teal\" class=\"multi-column__image-wrapper \" style=\"max-width: 100%; width: 60px\">",
+    "target": [
+      "#block-template--19416126095577__1657716863f313d00a-bf87e664-dc0d-469a-938f-ed8dc1fc1ae2 > .multi-column__image-wrapper"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"https://safaribags.com/collections/all?sort_by=manual&amp;filter.v.price.gte=&amp;filter.v.price.lte=&amp;filter.p.m.custom.colors_new=Green\" class=\"multi-column__image-wrapper \" style=\"max-width: 100%; width: 60px\">",
+    "target": [
+      "#block-template--19416126095577__1657716863f313d00a-9bb6af2b-6d24-4b07-952e-d7d6b4abde53 > .multi-column__image-wrapper"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"https://safaribags.com/collections/all?sort_by=manual&amp;filter.v.price.gte=&amp;filter.v.price.lte=&amp;filter.p.m.custom.colors_new=Yellow\" class=\"multi-column__image-wrapper \" style=\"max-width: 100%; width: 60px\">",
+    "target": [
+      "#block-template--19416126095577__1657716863f313d00a-1657716863d038c3f4-3 > .multi-column__image-wrapper"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"https://safaribags.com/collections/all?sort_by=manual&amp;filter.v.price.gte=&amp;filter.v.price.lte=&amp;filter.p.m.custom.colors_new=Orange\" class=\"multi-column__image-wrapper \" style=\"max-width: 100%; width: 60px\">",
+    "target": [
+      "#block-template--19416126095577__1657716863f313d00a-9def6e00-a445-45ab-95e1-26f45d68f1a0 > .multi-column__image-wrapper"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"https://urbanjungle.shop/?utm_source=safaribags&amp;utm_medium=referral&amp;utm_campaign=footer-link\" target=\"_blank\">",
+    "target": [
+      ".col-logo-wrapper-inner > a[target=\"_blank\"]:nth-child(1)"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"https://genietravel.com/?utm_source=safaribags&amp;utm_medium=referral&amp;utm_campaign=footer-link\" target=\"_blank\">",
+    "target": [
+      ".col-logo-wrapper-inner > a[target=\"_blank\"]:nth-child(2)"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  },
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a class=\"link--faded\" target=\"_blank\" rel=\"nofollow\" href=\"https://www.shopify.com?utm_campaign=poweredby&amp;utm_medium=shopify&amp;utm_source=onlinestore\"> </a>",
+    "target": [
+      "a[rel=\"nofollow\"]"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  }
+]</pre>
+              </details>
+            </div>
+          
+            <div class="violation">
+              <h3>meta-viewport — critical</h3>
+              <p>Zooming and scaling must not be disabled</p>
+              <p><b>Fix:</b> Review documentation and apply WCAG guidance for this rule. </p>
+              <details><summary>Nodes (1)</summary>
+                <pre>[
+  {
+    "any": [
+      {
+        "id": "meta-viewport",
+        "data": "maximum-scale",
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "maximum-scale on <meta> tag disables zooming on mobile devices"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=1.0\">",
+    "target": [
+      "meta[name=\"viewport\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  maximum-scale on <meta> tag disables zooming on mobile devices"
+  }
+]</pre>
+              </details>
+            </div>
+          
+        </div>
+
+        <hr/>
+        <h3>Screenshot</h3>
+        <img src="screenshot-c5637417-8b5f-4e97-990b-854c53ab0696.png" alt="screenshot of https://safaribags.com/" />
+
+        <hr/>
+        <p style="font-size:0.9em;color:#555">Automated checks cover only a subset of WCAG success criteria. Manual review is required for full conformance. See <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">W3C WCAG</a>.</p>
+      </body>
+      </html>
+      

@@ -11,6 +11,15 @@ const ScanSchema = new Schema({
         enum: ['pending', 'running', 'completed', 'failed'],        
         default: 'pending'
     },
+    score: {
+        type: Number,
+        default: null
+        },
+    violationsCount: {
+        type: Number,
+        default: 0
+    },
+
     startedAt: {
         type: Date
     },

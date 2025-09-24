@@ -1,0 +1,288 @@
+
+      <!doctype html>
+      <html>
+      <head><meta charset="utf-8"><title>A11y Report - https://www.britannica.com/topic/Wikipedia</title>
+        <style>
+          body { font-family: Arial, sans-serif; margin: 20px; color:#222; background:#f7f8fb; }
+          .header { display:flex; align-items:center; gap:16px; margin-bottom:12px }
+          .badge { padding:6px 10px; border-radius:6px; background:#eef; font-weight:700;}
+          .summary pre { background:#fff;padding:10px;border-radius:6px;overflow:auto; }
+          .violation { margin-bottom:12px;padding:12px;border-left:4px solid #e74c3c;background:#fff9f9 }
+          a.doc { font-size:0.9em; color:#0366d6; }
+          img { max-width:100%; border:1px solid #ddd; margin-top:12px; }
+        </style>
+      </head>
+      <body>
+        <div class="header">
+          <h1 style="margin:0">Accessibility Report</h1>
+          <div class="badge">Score: 76/100 — <span style="color:red">RISK</span></div>
+        </div>
+        <p>URL: <a href="https://www.britannica.com/topic/Wikipedia" target="_blank" rel="noreferrer">https://www.britannica.com/topic/Wikipedia</a></p>
+        <p>9/23/2025, 3:25:28 PM</p>
+
+        <div class="summary">
+          <h2>Summary</h2>
+          <pre>{
+  "url": "https://www.britannica.com/topic/Wikipedia",
+  "total": 3,
+  "byImpact": {
+    "serious": 2,
+    "critical": 1
+  },
+  "score": 76
+}</pre>
+        </div>
+
+        <div>
+          <h2>Violations & recommended fixes</h2>
+          
+            <div class="violation">
+              <h3>color-contrast — serious</h3>
+              <p>Elements must meet minimum color contrast ratio thresholds</p>
+              <p><b>Fix:</b> Increase contrast between foreground and background colors to meet WCAG AA ratio (4.5:1 for normal text). Use a contrast-checker and adjust CSS variables. <a class="doc" href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html" target="_blank">Read more</a></p>
+              <details><summary>Nodes (2)</summary>
+                <pre>[
+  {
+    "any": [
+      {
+        "id": "color-contrast",
+        "data": {
+          "fgColor": "#ffffff",
+          "bgColor": "#ef4444",
+          "contrastRatio": 3.76,
+          "fontSize": "12.0pt (16px)",
+          "fontWeight": "bold",
+          "messageKey": null,
+          "expectedContrastRatio": "4.5:1"
+        },
+        "relatedNodes": [
+          {
+            "html": "<a class=\"nav-bar-category mx-5 category-link-CHATBOT position-relative rw-slide\" href=\"/chatbot\" style=\"vertical-align: inherit;\"> <em class=\"material-icons\" data-icon=\"auto_awesome\"></em>\n                                <span>Ask the Chatbot</span>\n                            </a>",
+            "target": [
+              ".category-link-CHATBOT"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "Element has insufficient color contrast of 3.76 (foreground color: #ffffff, background color: #ef4444, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<span>Ask the Chatbot</span>",
+    "target": [
+      ".category-link-CHATBOT > span"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.76 (foreground color: #ffffff, background color: #ef4444, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "any": [
+      {
+        "id": "color-contrast",
+        "data": {
+          "fgColor": "#f87171",
+          "bgColor": "#ffffff",
+          "contrastRatio": 2.76,
+          "fontSize": "10.5pt (14px)",
+          "fontWeight": "normal",
+          "messageKey": null,
+          "expectedContrastRatio": "4.5:1"
+        },
+        "relatedNodes": [
+          {
+            "html": "<button class=\"ai-ask-button btn btn-sm border-2 btn-outline-red-400 border-red-400 btn-sm btn-outline-red-400 border-red-400 px-sm-5 px-md-10 js-inline-ai-ask-button\">\n    Ask the Chatbot a Question\n\t</button>",
+            "target": [
+              ".infinite-scroll-container > article > .gx-0.grid > .col > .ml-0.h-100 > .gx-0.grid.h-100 > .reading-channel-container > .infinite-pagination-container > .grey-box > .grey-box-content > .page2ref-true > .reading-channel > .topic-header > .d-sm-flex > .mb-15.mr-10 > .px-sm-5.px-md-10.js-inline-ai-ask-button"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "Element has insufficient color contrast of 2.76 (foreground color: #f87171, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<button class=\"ai-ask-button btn btn-sm border-2 btn-outline-red-400 border-red-400 btn-sm btn-outline-red-400 border-red-400 px-sm-5 px-md-10 js-inline-ai-ask-button\">\n    Ask the Chatbot a Question\n\t</button>",
+    "target": [
+      ".infinite-scroll-container > article > .gx-0.grid > .col > .ml-0.h-100 > .gx-0.grid.h-100 > .reading-channel-container > .infinite-pagination-container > .grey-box > .grey-box-content > .page2ref-true > .reading-channel > .topic-header > .d-sm-flex > .mb-15.mr-10 > .px-sm-5.px-md-10.js-inline-ai-ask-button"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.76 (foreground color: #f87171, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+  }
+]</pre>
+              </details>
+            </div>
+          
+            <div class="violation">
+              <h3>image-alt — critical</h3>
+              <p>Images must have alternative text</p>
+              <p><b>Fix:</b> Add descriptive alt text to images that convey meaning. Avoid using empty alt attributes for informative images. <a class="doc" href="https://www.w3.org/WAI/tutorials/images/decision-tree/" target="_blank">Read more</a></p>
+              <details><summary>Nodes (1)</summary>
+                <pre>[
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img class=\"rounded\" style=\"max-width: 100px; min-width: 80px\" src=\"https://cdn.britannica.com/marketing/BlueThistle.webp\">",
+    "target": [
+      "#ref298164 > .module-spacing > .marketing-INLINE_SUBSCRIPTION > .student-promo-banner-wrapper > .student-promo-banner > .student-promo-banner-img-wrapper > img"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  }
+]</pre>
+              </details>
+            </div>
+          
+            <div class="violation">
+              <h3>link-in-text-block — serious</h3>
+              <p>Links must be distinguishable without relying on color</p>
+              <p><b>Fix:</b> Review documentation and apply WCAG guidance for this rule. </p>
+              <details><summary>Nodes (2)</summary>
+                <pre>[
+  {
+    "any": [
+      {
+        "id": "link-in-text-block",
+        "data": {
+          "messageKey": "fgContrast",
+          "contrastRatio": 2.44,
+          "requiredContrastRatio": 3,
+          "nodeColor": "#14599d",
+          "parentColor": "#1a1a1a"
+        },
+        "relatedNodes": [
+          {
+            "html": "<div class=\"last-updated font-12 font-serif\">",
+            "target": [
+              ".infinite-scroll-container > article > .gx-0.grid > .col > .ml-0.h-100 > .gx-0.grid.h-100 > .reading-channel-container > .infinite-pagination-container > .grey-box > .grey-box-content > .page2ref-true > .reading-channel > .topic-header > .md-byline > .last-updated"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "The link has insufficient color contrast of 2.44:1 with the surrounding text. (Minimum contrast is 3:1, link text: #14599d, surrounding text: #1a1a1a)"
+      },
+      {
+        "id": "link-in-text-block-style",
+        "data": null,
+        "relatedNodes": [
+          {
+            "html": "<div class=\"last-updated font-12 font-serif\">",
+            "target": [
+              ".infinite-scroll-container > article > .gx-0.grid > .col > .ml-0.h-100 > .gx-0.grid.h-100 > .reading-channel-container > .infinite-pagination-container > .grey-box > .grey-box-content > .page2ref-true > .reading-channel > .topic-header > .md-byline > .last-updated"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "The link has no styling (such as underline) to distinguish it from the surrounding text"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<a class=\"byline-edit-history\" href=\"https://www.britannica.com/topic/Wikipedia/additional-info#history\" rel=\"nofollow\">Article History</a>",
+    "target": [
+      ".infinite-scroll-container > article > .gx-0.grid > .col > .ml-0.h-100 > .gx-0.grid.h-100 > .reading-channel-container > .infinite-pagination-container > .grey-box > .grey-box-content > .page2ref-true > .reading-channel > .topic-header > .md-byline > .last-updated > .byline-edit-history"
+    ],
+    "failureSummary": "Fix any of the following:\n  The link has insufficient color contrast of 2.44:1 with the surrounding text. (Minimum contrast is 3:1, link text: #14599d, surrounding text: #1a1a1a)\n  The link has no styling (such as underline) to distinguish it from the surrounding text"
+  },
+  {
+    "any": [
+      {
+        "id": "link-in-text-block",
+        "data": {
+          "messageKey": "fgContrast",
+          "contrastRatio": 2.44,
+          "requiredContrastRatio": 3,
+          "nodeColor": "#14599d",
+          "parentColor": "#1a1a1a"
+        },
+        "relatedNodes": [
+          {
+            "html": "<span class=\"md-signature font-12\">This article was most recently revised and updated by <a href=\"/editor/tara-ramanathan/12894283\">Tara Ramanathan</a>.</span>",
+            "target": [
+              ".reading-channel > .md-signature.font-12"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "The link has insufficient color contrast of 2.44:1 with the surrounding text. (Minimum contrast is 3:1, link text: #14599d, surrounding text: #1a1a1a)"
+      },
+      {
+        "id": "link-in-text-block-style",
+        "data": null,
+        "relatedNodes": [
+          {
+            "html": "<span class=\"md-signature font-12\">This article was most recently revised and updated by <a href=\"/editor/tara-ramanathan/12894283\">Tara Ramanathan</a>.</span>",
+            "target": [
+              ".reading-channel > .md-signature.font-12"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "The link has no styling (such as underline) to distinguish it from the surrounding text"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<a href=\"/editor/tara-ramanathan/12894283\">Tara Ramanathan</a>",
+    "target": [
+      ".reading-channel > .md-signature.font-12 > a"
+    ],
+    "failureSummary": "Fix any of the following:\n  The link has insufficient color contrast of 2.44:1 with the surrounding text. (Minimum contrast is 3:1, link text: #14599d, surrounding text: #1a1a1a)\n  The link has no styling (such as underline) to distinguish it from the surrounding text"
+  }
+]</pre>
+              </details>
+            </div>
+          
+        </div>
+
+        <hr/>
+        <h3>Screenshot</h3>
+        <img src="screenshot-52584f02-875c-4b62-b5f4-c45bcb81dd19.png" alt="screenshot of https://www.britannica.com/topic/Wikipedia" />
+
+        <hr/>
+        <p style="font-size:0.9em;color:#555">Automated checks cover only a subset of WCAG success criteria. Manual review is required for full conformance. See <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">W3C WCAG</a>.</p>
+      </body>
+      </html>
+      

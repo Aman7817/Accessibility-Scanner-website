@@ -1,0 +1,410 @@
+
+      <!doctype html>
+      <html>
+      <head><meta charset="utf-8"><title>A11y Report - http://erp.invertisuniversity.ac.in:81/</title>
+        <style>
+          body { font-family: Arial, sans-serif; margin: 20px; color:#222; background:#f7f8fb; }
+          .header { display:flex; align-items:center; gap:16px; margin-bottom:12px }
+          .badge { padding:6px 10px; border-radius:6px; background:#eef; font-weight:700;}
+          .summary pre { background:#fff;padding:10px;border-radius:6px;overflow:auto; }
+          .violation { margin-bottom:12px;padding:12px;border-left:4px solid #e74c3c;background:#fff9f9 }
+          a.doc { font-size:0.9em; color:#0366d6; }
+          img { max-width:100%; border:1px solid #ddd; margin-top:12px; }
+        </style>
+      </head>
+      <body>
+        <div class="header">
+          <h1 style="margin:0">Accessibility Report</h1>
+          <div class="badge">Score: 52/100 — <span style="color:red">RISK</span></div>
+        </div>
+        <p>URL: <a href="http://erp.invertisuniversity.ac.in:81/" target="_blank" rel="noreferrer">http://erp.invertisuniversity.ac.in:81/</a></p>
+        <p>9/23/2025, 8:57:13 AM</p>
+
+        <div class="summary">
+          <h2>Summary</h2>
+          <pre>{
+  "url": "http://erp.invertisuniversity.ac.in:81/",
+  "total": 6,
+  "byImpact": {
+    "serious": 4,
+    "critical": 2
+  },
+  "score": 52
+}</pre>
+        </div>
+
+        <div>
+          <h2>Violations & recommended fixes</h2>
+          
+            <div class="violation">
+              <h3>aria-input-field-name — serious</h3>
+              <p>ARIA input fields must have an accessible name</p>
+              <p><b>Fix:</b> Review documentation and apply WCAG guidance for this rule. </p>
+              <details><summary>Nodes (1)</summary>
+                <pre>[
+  {
+    "any": [
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<div class=\"carousel-inner\" role=\"listbox\">",
+    "target": [
+      ".carousel-inner"
+    ],
+    "failureSummary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  }
+]</pre>
+              </details>
+            </div>
+          
+            <div class="violation">
+              <h3>aria-required-children — critical</h3>
+              <p>Certain ARIA roles must contain particular children</p>
+              <p><b>Fix:</b> Review documentation and apply WCAG guidance for this rule. </p>
+              <details><summary>Nodes (1)</summary>
+                <pre>[
+  {
+    "any": [
+      {
+        "id": "aria-required-children",
+        "data": {
+          "messageKey": "unallowed",
+          "values": "img[tabindex]"
+        },
+        "relatedNodes": [
+          {
+            "html": "<img src=\"assets/images/bg1.jpg\">",
+            "target": [
+              "img[src$=\"bg1.jpg\"]"
+            ]
+          }
+        ],
+        "impact": "critical",
+        "message": "Element has children which are not allowed: img[tabindex]"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<div class=\"carousel-inner\" role=\"listbox\">",
+    "target": [
+      ".carousel-inner"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has children which are not allowed: img[tabindex]"
+  }
+]</pre>
+              </details>
+            </div>
+          
+            <div class="violation">
+              <h3>color-contrast — serious</h3>
+              <p>Elements must meet minimum color contrast ratio thresholds</p>
+              <p><b>Fix:</b> Increase contrast between foreground and background colors to meet WCAG AA ratio (4.5:1 for normal text). Use a contrast-checker and adjust CSS variables. <a class="doc" href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html" target="_blank">Read more</a></p>
+              <details><summary>Nodes (2)</summary>
+                <pre>[
+  {
+    "any": [
+      {
+        "id": "color-contrast",
+        "data": {
+          "fgColor": "#428bca",
+          "bgColor": "#ffffff",
+          "contrastRatio": 3.63,
+          "fontSize": "10.5pt (14px)",
+          "fontWeight": "normal",
+          "messageKey": null,
+          "expectedContrastRatio": "4.5:1"
+        },
+        "relatedNodes": [
+          {
+            "html": "<div class=\"form-wizard-wrapper\">",
+            "target": [
+              ".form-wizard-wrapper"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "Element has insufficient color contrast of 3.63 (foreground color: #428bca, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<a id=\"hrpConfirmation\" class=\"forgetpassword mt-5\" href=\"javascript:__doPostBack('hrpConfirmation','')\">Forgot Password</a>",
+    "target": [
+      "#hrpConfirmation"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.63 (foreground color: #428bca, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "any": [
+      {
+        "id": "color-contrast",
+        "data": {
+          "fgColor": "#428bca",
+          "bgColor": "#ffffff",
+          "contrastRatio": 3.63,
+          "fontSize": "10.5pt (14px)",
+          "fontWeight": "normal",
+          "messageKey": null,
+          "expectedContrastRatio": "4.5:1"
+        },
+        "relatedNodes": [
+          {
+            "html": "<div class=\"form-wizard-wrapper\">",
+            "target": [
+              ".form-wizard-wrapper"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "Element has insufficient color contrast of 3.63 (foreground color: #428bca, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<a id=\"LinkAlumniRegistratin\" class=\"forgetpassword mt-5\" href=\"javascript:__doPostBack('LinkAlumniRegistratin','')\">Alumni Registration</a>",
+    "target": [
+      "#LinkAlumniRegistratin"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.63 (foreground color: #428bca, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+  }
+]</pre>
+              </details>
+            </div>
+          
+            <div class="violation">
+              <h3>html-has-lang — serious</h3>
+              <p><html> element must have a lang attribute</p>
+              <p><b>Fix:</b> Review documentation and apply WCAG guidance for this rule. </p>
+              <details><summary>Nodes (1)</summary>
+                <pre>[
+  {
+    "any": [
+      {
+        "id": "has-lang",
+        "data": {
+          "messageKey": "noLang"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "The <html> element does not have a lang attribute"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<html xmlns=\"http://www.w3.org/1999/xhtml\">",
+    "target": [
+      "html"
+    ],
+    "failureSummary": "Fix any of the following:\n  The <html> element does not have a lang attribute"
+  }
+]</pre>
+              </details>
+            </div>
+          
+            <div class="violation">
+              <h3>image-alt — critical</h3>
+              <p>Images must have alternative text</p>
+              <p><b>Fix:</b> Add descriptive alt text to images that convey meaning. Avoid using empty alt attributes for informative images. <a class="doc" href="https://www.w3.org/WAI/tutorials/images/decision-tree/" target="_blank">Read more</a></p>
+              <details><summary>Nodes (2)</summary>
+                <pre>[
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img src=\"../assets/images/ilogo.png\" class=\"reg_logo\">",
+    "target": [
+      ".reg_logo"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  },
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img src=\"assets/images/bg1.jpg\">",
+    "target": [
+      "img[src$=\"bg1.jpg\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  }
+]</pre>
+              </details>
+            </div>
+          
+            <div class="violation">
+              <h3>link-name — serious</h3>
+              <p>Links must have discernible text</p>
+              <p><b>Fix:</b> Review documentation and apply WCAG guidance for this rule. </p>
+              <details><summary>Nodes (1)</summary>
+                <pre>[
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"https://www.invertisuniversity.ac.in/\" target=\"_blank\">\n                    <img src=\"../assets/images/ilogo.png\" class=\"reg_logo\"></a>",
+    "target": [
+      "a[target=\"_blank\"]"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  }
+]</pre>
+              </details>
+            </div>
+          
+        </div>
+
+        <hr/>
+        <h3>Screenshot</h3>
+        <img src="screenshot-6b4d2692-d55b-475d-964c-663ff8344d77.png" alt="screenshot of http://erp.invertisuniversity.ac.in:81/" />
+
+        <hr/>
+        <p style="font-size:0.9em;color:#555">Automated checks cover only a subset of WCAG success criteria. Manual review is required for full conformance. See <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">W3C WCAG</a>.</p>
+      </body>
+      </html>
+      

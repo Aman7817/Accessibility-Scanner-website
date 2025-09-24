@@ -1,4 +1,3 @@
-// services/scan.service.js
 import puppeteer from 'puppeteer';
 import { v4 as uuidv4 } from 'uuid';
 import fs from 'fs';
@@ -63,18 +62,25 @@ export async function runScan(url, scanId = null) {
   console.log(`[scan:${scanId || id}] runScan starting for:`, url);
   try {
     // Prepare puppeteer launch options
-    const launchArgs = [];
-    // allow override via env var for dev/CI: set PUP_NO_SANDBOX=1 to add no-sandbox args
+    const launchArgs = [
+      '--disable-web-security',
+      '--disable-features=VizDisplayCompositor',
+      '--disable-background-timer-throttling',
+      '--disable-backgrounding-occluded-windows',
+      '--disable-renderer-backgrounding',
+      '--disable-dev-shm-usage'
+    ];
+    
     if (process.env.PUP_NO_SANDBOX === 'true' || process.env.PUP_NO_SANDBOX === '1') {
       launchArgs.push('--no-sandbox', '--disable-setuid-sandbox');
     }
-    // Accept insecure certs if needed
+    
     const launchOptions = {
       headless: true,
       args: launchArgs,
       ignoreHTTPSErrors: true
     };
-    // Optionally allow custom chrome/chromium binary path via env
+    
     if (process.env.CHROME_PATH) {
       launchOptions.executablePath = process.env.CHROME_PATH;
       console.log(`[scan:${scanId || id}] Using CHROME_PATH: ${process.env.CHROME_PATH}`);
@@ -89,58 +95,100 @@ export async function runScan(url, scanId = null) {
     }
 
     const page = await browser.newPage();
+    
+    // Set a longer default timeout
+    page.setDefaultTimeout(60000);
+    page.setDefaultNavigationTimeout(60000);
+    
     await page.setViewport({ width: 1280, height: 800 });
 
-    // Navigate with safer waitUntil and longer timeout
+    // Navigate to the page
     console.log(`[scan:${scanId || id}] Navigating to URL...`);
     try {
-      // Use domcontentloaded to avoid stuck waiting on heavy network resources; keep timeout 60s
-      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+      await page.goto(url, { 
+        waitUntil: 'networkidle0', 
+        timeout: 60000 
+      });
     } catch (err) {
-      // try again with networkidle2 if needed or log and continue — but throw to let controller handle
       console.warn(`[scan:${scanId || id}] page.goto warning: ${err.message || err}`);
-      // if navigation fails critically, rethrow
-      throw new Error(`Navigation to ${url} failed: ${err.message || err}`);
+      // Try with a different wait strategy
+      try {
+        await page.goto(url, { 
+          waitUntil: 'domcontentloaded', 
+          timeout: 60000 
+        });
+      } catch (err2) {
+        throw new Error(`Navigation to ${url} failed: ${err2.message}`);
+      }
     }
 
-    // Inject axe-core
+    // FIXED: Simple and reliable axe-core injection
     console.log(`[scan:${scanId || id}] Injecting axe-core...`);
     try {
-      await page.addScriptTag({ content: axeCore.source });
+      // Method 1: Direct evaluation (most reliable)
+      await page.evaluate(axeSource => {
+        // Create a script element and inject axe-core
+        const script = document.createElement('script');
+        script.textContent = axeSource;
+        document.head.appendChild(script);
+      }, axeCore.source);
+
+      // Wait for axe to be available with multiple checks
+      let axeAvailable = false;
+      for (let i = 0; i < 10; i++) {
+        axeAvailable = await page.evaluate(() => {
+          return typeof window.axe !== 'undefined' && 
+                 typeof window.axe.run === 'function' &&
+                 typeof window.axe.configure === 'function';
+        });
+        
+        if (axeAvailable) break;
+        await new Promise(resolve => setTimeout(resolve, 500));
+      }
+
+      if (!axeAvailable) {
+        throw new Error('axe-core not loaded after multiple attempts');
+      }
+
+      console.log(`[scan:${scanId || id}] axe-core injected successfully`);
     } catch (err) {
       console.error(`[scan:${scanId || id}] axe injection failed:`, err.message || err);
-      // We can choose to continue and run partial report, but better to throw so controller marks scan failed
-      throw new Error(`Failed to inject axe-core: ${err.message || err}`);
+      throw new Error(`Failed to inject accessibility engine: ${err.message}`);
     }
 
-    // Run axe
+    // Run axe with simpler configuration
     console.log(`[scan:${scanId || id}] Running axe.run on the page...`);
     let axeResults = null;
     try {
       axeResults = await page.evaluate(async () => {
-        // eslint-disable-next-line no-undef
         if (typeof axe === 'undefined' || !axe.run) {
-          throw new Error('axe not available in page context');
+          throw new Error('axe core not available');
         }
+        
+        // Simple configuration that works reliably
         return await axe.run(document, {
-          runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'section508'] }
+          runOnly: {
+            type: 'tags',
+            values: ['wcag2a', 'wcag2aa', 'best-practice']
+          }
         });
       });
+      
+      console.log(`[scan:${scanId || id}] axe.run completed successfully. Found ${axeResults.violations.length} violations.`);
     } catch (err) {
       console.error(`[scan:${scanId || id}] axe.run failed:`, err.message || err);
-      throw new Error(`axe.run failed: ${err.message || err}`);
+      throw new Error(`Accessibility analysis failed: ${err.message}`);
     }
 
-    // Screenshot (best-effort)
+    // Take screenshot
     console.log(`[scan:${scanId || id}] Taking screenshot...`);
     try {
-      await page.screenshot({ path: screenshotPath, fullPage: true });
+      await page.screenshot({ path: screenshotPath, fullPage: false });
     } catch (err) {
       console.warn(`[scan:${scanId || id}] Screenshot capture failed:`, err.message || err);
-      // don't fail the whole scan for screenshot failure
     }
 
-    // compute score and prepare violations with fixes
+    // Compute score and prepare violations with fixes
     const { score, counts } = computeScore(axeResults);
     const violationsWithFixes = (axeResults?.violations || []).map(v => {
       const fixMeta = RULE_FIXES[v.id] || {};
@@ -168,19 +216,21 @@ export async function runScan(url, scanId = null) {
       generatedAt: new Date().toISOString()
     };
 
-    // Write JSON report (try/catch to avoid crashing)
+    // Write JSON report
     console.log(`[scan:${scanId || id}] Writing JSON report to ${jsonReportPath}...`);
     try {
       fs.writeFileSync(jsonReportPath, JSON.stringify(outJson, null, 2));
     } catch (err) {
       console.error(`[scan:${scanId || id}] Failed to write JSON report:`, err.message || err);
-      // if write fails, we still continue but log error; controller can decide
     }
 
-    // Build a simple HTML report (referencing screenshot file name)
+    // Build HTML report
     console.log(`[scan:${scanId || id}] Building HTML report at ${htmlReportPath}...`);
     try {
-      const gradeMsg = score >= 85 ? `<span style="color:green">A</span>` : `<span style="color:red">RISK</span>`;
+      const gradeMsg = score >= 85 ? `<span style="color:green">A</span>` : 
+                       score >= 70 ? `<span style="color:orange">B</span>` : 
+                       `<span style="color:red">RISK</span>`;
+      
       const html = `
       <!doctype html>
       <html>
@@ -210,7 +260,7 @@ export async function runScan(url, scanId = null) {
 
         <div>
           <h2>Violations & recommended fixes</h2>
-          ${violationsWithFixes.map(v => `
+          ${violationsWithFixes.length > 0 ? violationsWithFixes.map(v => `
             <div class="violation">
               <h3>${v.id} — ${v.impact}</h3>
               <p>${v.description}</p>
@@ -219,7 +269,7 @@ export async function runScan(url, scanId = null) {
                 <pre>${JSON.stringify(v.nodes, null, 2)}</pre>
               </details>
             </div>
-          `).join('')}
+          `).join('') : '<p>No violations found! 🎉</p>'}
         </div>
 
         <hr/>
@@ -250,7 +300,6 @@ export async function runScan(url, scanId = null) {
     };
   } catch (err) {
     console.error(`[scan:${scanId || id}] runScan ERROR:`, err.message || err);
-    // Re-throw so calling controller can mark scan failed and persist error
     throw err;
   } finally {
     if (browser) {

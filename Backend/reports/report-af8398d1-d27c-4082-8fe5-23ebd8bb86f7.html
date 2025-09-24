@@ -1,0 +1,688 @@
+
+      <!doctype html>
+      <html>
+      <head><meta charset="utf-8"><title>A11y Report - https://en.wikipedia.org/wiki/Wikipedia:About</title>
+        <style>
+          body { font-family: Arial, sans-serif; margin: 20px; color:#222; background:#f7f8fb; }
+          .header { display:flex; align-items:center; gap:16px; margin-bottom:12px }
+          .badge { padding:6px 10px; border-radius:6px; background:#eef; font-weight:700;}
+          .summary pre { background:#fff;padding:10px;border-radius:6px;overflow:auto; }
+          .violation { margin-bottom:12px;padding:12px;border-left:4px solid #e74c3c;background:#fff9f9 }
+          a.doc { font-size:0.9em; color:#0366d6; }
+          img { max-width:100%; border:1px solid #ddd; margin-top:12px; }
+        </style>
+      </head>
+      <body>
+        <div class="header">
+          <h1 style="margin:0">Accessibility Report</h1>
+          <div class="badge">Score: 76/100 — <span style="color:red">RISK</span></div>
+        </div>
+        <p>URL: <a href="https://en.wikipedia.org/wiki/Wikipedia:About" target="_blank" rel="noreferrer">https://en.wikipedia.org/wiki/Wikipedia:About</a></p>
+        <p>9/23/2025, 2:29:39 PM</p>
+
+        <div class="summary">
+          <h2>Summary</h2>
+          <pre>{
+  "url": "https://en.wikipedia.org/wiki/Wikipedia:About",
+  "total": 3,
+  "byImpact": {
+    "serious": 2,
+    "critical": 1
+  },
+  "score": 76
+}</pre>
+        </div>
+
+        <div>
+          <h2>Violations & recommended fixes</h2>
+          
+            <div class="violation">
+              <h3>color-contrast — serious</h3>
+              <p>Elements must meet minimum color contrast ratio thresholds</p>
+              <p><b>Fix:</b> Increase contrast between foreground and background colors to meet WCAG AA ratio (4.5:1 for normal text). Use a contrast-checker and adjust CSS variables. <a class="doc" href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html" target="_blank">Read more</a></p>
+              <details><summary>Nodes (15)</summary>
+                <pre>[
+  {
+    "any": [
+      {
+        "id": "color-contrast",
+        "data": {
+          "fgColor": "#3366cc",
+          "bgColor": "#ccccff",
+          "contrastRatio": 3.48,
+          "fontSize": "12.0pt (16.0512px)",
+          "fontWeight": "bold",
+          "messageKey": null,
+          "expectedContrastRatio": "4.5:1"
+        },
+        "relatedNodes": [
+          {
+            "html": "<th scope=\"col\" class=\"navbox-title\" colspan=\"2\" style=\"text-align: center;\">",
+            "target": [
+              ".navbox-title"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "Element has insufficient color contrast of 3.48 (foreground color: #3366cc, background color: #ccccff, font size: 12.0pt (16.0512px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<a href=\"/wiki/Category:Wikipedia_basic_information\" title=\"Category:Wikipedia basic information\">Basic information on Wikipedia</a>",
+    "target": [
+      "#Basic_information_on_Wikipedia_-_\\(Search\\)8461 > a:nth-child(1)"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.48 (foreground color: #3366cc, background color: #ccccff, font size: 12.0pt (16.0512px), font weight: bold). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "any": [
+      {
+        "id": "color-contrast",
+        "data": {
+          "fgColor": "#3366cc",
+          "bgColor": "#ccccff",
+          "contrastRatio": 3.48,
+          "fontSize": "12.0pt (16.0512px)",
+          "fontWeight": "bold",
+          "messageKey": null,
+          "expectedContrastRatio": "4.5:1"
+        },
+        "relatedNodes": [
+          {
+            "html": "<th scope=\"col\" class=\"navbox-title\" colspan=\"2\" style=\"text-align: center;\">",
+            "target": [
+              ".navbox-title"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "Element has insufficient color contrast of 3.48 (foreground color: #3366cc, background color: #ccccff, font size: 12.0pt (16.0512px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<a href=\"/wiki/Help:Searching#Custom_search_boxes\" title=\"Help:Searching\">Search</a>",
+    "target": [
+      "#Basic_information_on_Wikipedia_-_\\(Search\\)8461 > a[title=\"Help:Searching\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.48 (foreground color: #3366cc, background color: #ccccff, font size: 12.0pt (16.0512px), font weight: bold). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "any": [
+      {
+        "id": "color-contrast",
+        "data": {
+          "fgColor": "#3366cc",
+          "bgColor": "#ddddff",
+          "contrastRatio": 4.05,
+          "fontSize": "10.6pt (14.08px)",
+          "fontWeight": "bold",
+          "messageKey": null,
+          "expectedContrastRatio": "4.5:1"
+        },
+        "relatedNodes": [
+          {
+            "html": "<td class=\"navbox-abovebelow\" colspan=\"2\" style=\"text-align: center;\">",
+            "target": [
+              ".navbox-abovebelow"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<a href=\"/wiki/Help:Contents\" title=\"Help:Contents\">Help</a>",
+    "target": [
+      "a[title=\"Help:Contents\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "any": [
+      {
+        "id": "color-contrast",
+        "data": {
+          "fgColor": "#3366cc",
+          "bgColor": "#ddddff",
+          "contrastRatio": 4.05,
+          "fontSize": "10.6pt (14.08px)",
+          "fontWeight": "bold",
+          "messageKey": null,
+          "expectedContrastRatio": "4.5:1"
+        },
+        "relatedNodes": [
+          {
+            "html": "<td class=\"navbox-abovebelow\" colspan=\"2\" style=\"text-align: center;\">",
+            "target": [
+              ".navbox-abovebelow"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<a href=\"/wiki/Help:Directory\" title=\"Help:Directory\">directory</a>",
+    "target": [
+      "a[href$=\"Help:Directory\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "any": [
+      {
+        "id": "color-contrast",
+        "data": {
+          "fgColor": "#3366cc",
+          "bgColor": "#ddddff",
+          "contrastRatio": 4.05,
+          "fontSize": "10.6pt (14.08px)",
+          "fontWeight": "bold",
+          "messageKey": null,
+          "expectedContrastRatio": "4.5:1"
+        },
+        "relatedNodes": [
+          {
+            "html": "<td class=\"navbox-abovebelow\" colspan=\"2\" style=\"text-align: center;\">",
+            "target": [
+              ".navbox-abovebelow"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<a href=\"/wiki/Help:Menu\" title=\"Help:Menu\">menu</a>",
+    "target": [
+      "b > a[href$=\"Help:Menu\"][title=\"Help:Menu\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "any": [
+      {
+        "id": "color-contrast",
+        "data": {
+          "fgColor": "#3366cc",
+          "bgColor": "#ddddff",
+          "contrastRatio": 4.05,
+          "fontSize": "10.6pt (14.08px)",
+          "fontWeight": "bold",
+          "messageKey": null,
+          "expectedContrastRatio": "4.5:1"
+        },
+        "relatedNodes": [
+          {
+            "html": "<td class=\"navbox-abovebelow\" colspan=\"2\" style=\"text-align: center;\">",
+            "target": [
+              ".navbox-abovebelow"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<a href=\"/wiki/Wikipedia:Teahouse\" title=\"Wikipedia:Teahouse\">Teahouse</a>",
+    "target": [
+      "a[href$=\"Wikipedia:Teahouse\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "any": [
+      {
+        "id": "color-contrast",
+        "data": {
+          "fgColor": "#3366cc",
+          "bgColor": "#ddddff",
+          "contrastRatio": 4.05,
+          "fontSize": "10.6pt (14.08px)",
+          "fontWeight": "bold",
+          "messageKey": null,
+          "expectedContrastRatio": "4.5:1"
+        },
+        "relatedNodes": [
+          {
+            "html": "<th scope=\"row\" class=\"navbox-group\" style=\"text-align: center;;width:1%\"><a href=\"/wiki/Wikipedia:FAQ/Readers\" title=\"Wikipedia:FAQ/Readers\">Readers' FAQ</a></th>",
+            "target": [
+              "tr:nth-child(4) > .navbox-group[scope=\"row\"]"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<a href=\"/wiki/Wikipedia:FAQ/Readers\" title=\"Wikipedia:FAQ/Readers\">Readers' FAQ</a>",
+    "target": [
+      "a[href$=\"Readers\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "any": [
+      {
+        "id": "color-contrast",
+        "data": {
+          "fgColor": "#3366cc",
+          "bgColor": "#ddddff",
+          "contrastRatio": 4.05,
+          "fontSize": "10.6pt (14.08px)",
+          "fontWeight": "bold",
+          "messageKey": null,
+          "expectedContrastRatio": "4.5:1"
+        },
+        "relatedNodes": [
+          {
+            "html": "<th scope=\"row\" class=\"navbox-group\" style=\"text-align: center;;width:1%\"><a href=\"/wiki/Wikipedia:Contributing_to_Wikipedia\" title=\"Wikipedia:Contributing to Wikipedia\">Introductions<br>to contributing </a></th>",
+            "target": [
+              "tr:nth-child(5) > .navbox-group[scope=\"row\"]"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<a href=\"/wiki/Wikipedia:Contributing_to_Wikipedia\" title=\"Wikipedia:Contributing to Wikipedia\">Introductions<br>to contributing </a>",
+    "target": [
+      "tr:nth-child(5) > .navbox-group[scope=\"row\"] > a"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "any": [
+      {
+        "id": "color-contrast",
+        "data": {
+          "fgColor": "#3366cc",
+          "bgColor": "#ddddff",
+          "contrastRatio": 4.05,
+          "fontSize": "10.6pt (14.08px)",
+          "fontWeight": "bold",
+          "messageKey": null,
+          "expectedContrastRatio": "4.5:1"
+        },
+        "relatedNodes": [
+          {
+            "html": "<th scope=\"row\" class=\"navbox-group\" style=\"text-align: center;;width:1%\"><a href=\"/wiki/Wikipedia:Policies_and_guidelines\" title=\"Wikipedia:Policies and guidelines\">Pillars, policies<br> and guidelines</a></th>",
+            "target": [
+              "tr:nth-child(6) > .navbox-group[scope=\"row\"]"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<a href=\"/wiki/Wikipedia:Policies_and_guidelines\" title=\"Wikipedia:Policies and guidelines\">Pillars, policies<br> and guidelines</a>",
+    "target": [
+      "tr:nth-child(6) > .navbox-group[scope=\"row\"] > a"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "any": [
+      {
+        "id": "color-contrast",
+        "data": {
+          "fgColor": "#3366cc",
+          "bgColor": "#ddddff",
+          "contrastRatio": 4.05,
+          "fontSize": "10.6pt (14.08px)",
+          "fontWeight": "bold",
+          "messageKey": null,
+          "expectedContrastRatio": "4.5:1"
+        },
+        "relatedNodes": [
+          {
+            "html": "<th scope=\"row\" class=\"navbox-group\" style=\"text-align: center;;width:1%\"><a href=\"/wiki/Wikipedia:Questions\" title=\"Wikipedia:Questions\">Getting help</a></th>",
+            "target": [
+              "tr:nth-child(7) > .navbox-group[scope=\"row\"]"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<a href=\"/wiki/Wikipedia:Questions\" title=\"Wikipedia:Questions\">Getting help</a>",
+    "target": [
+      "a[href$=\"Wikipedia:Questions\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "any": [
+      {
+        "id": "color-contrast",
+        "data": {
+          "fgColor": "#3366cc",
+          "bgColor": "#ddddff",
+          "contrastRatio": 4.05,
+          "fontSize": "10.6pt (14.08px)",
+          "fontWeight": "bold",
+          "messageKey": null,
+          "expectedContrastRatio": "4.5:1"
+        },
+        "relatedNodes": [
+          {
+            "html": "<th scope=\"row\" class=\"navbox-group\" style=\"text-align: center;;width:1%\"><a href=\"/wiki/Wikipedia_community\" title=\"Wikipedia community\">Wikipedia community</a></th>",
+            "target": [
+              "tr:nth-child(8) > .navbox-group[scope=\"row\"]"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<a href=\"/wiki/Wikipedia_community\" title=\"Wikipedia community\">Wikipedia community</a>",
+    "target": [
+      ".navbox-group[scope=\"row\"] > a[href$=\"Wikipedia_community\"][title=\"Wikipedia community\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "any": [
+      {
+        "id": "color-contrast",
+        "data": {
+          "fgColor": "#3366cc",
+          "bgColor": "#ddddff",
+          "contrastRatio": 4.05,
+          "fontSize": "10.6pt (14.08px)",
+          "fontWeight": "bold",
+          "messageKey": null,
+          "expectedContrastRatio": "4.5:1"
+        },
+        "relatedNodes": [
+          {
+            "html": "<th scope=\"row\" class=\"navbox-group\" style=\"text-align: center;;width:1%\"><a href=\"/wiki/Wikipedia:Citing_sources\" title=\"Wikipedia:Citing sources\">Sourcing</a> <br>and <a href=\"/wiki/Wikipedia:Reliable_sources\" title=\"Wikipedia:Reliable sources\">referencing</a></th>",
+            "target": [
+              "tr:nth-child(9) > .navbox-group[scope=\"row\"]"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<a href=\"/wiki/Wikipedia:Citing_sources\" title=\"Wikipedia:Citing sources\">Sourcing</a>",
+    "target": [
+      "a[href$=\"Wikipedia:Citing_sources\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "any": [
+      {
+        "id": "color-contrast",
+        "data": {
+          "fgColor": "#3366cc",
+          "bgColor": "#ddddff",
+          "contrastRatio": 4.05,
+          "fontSize": "10.6pt (14.08px)",
+          "fontWeight": "bold",
+          "messageKey": null,
+          "expectedContrastRatio": "4.5:1"
+        },
+        "relatedNodes": [
+          {
+            "html": "<th scope=\"row\" class=\"navbox-group\" style=\"text-align: center;;width:1%\"><a href=\"/wiki/Wikipedia:Citing_sources\" title=\"Wikipedia:Citing sources\">Sourcing</a> <br>and <a href=\"/wiki/Wikipedia:Reliable_sources\" title=\"Wikipedia:Reliable sources\">referencing</a></th>",
+            "target": [
+              "tr:nth-child(9) > .navbox-group[scope=\"row\"]"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<a href=\"/wiki/Wikipedia:Reliable_sources\" title=\"Wikipedia:Reliable sources\">referencing</a>",
+    "target": [
+      ".navbox-group[scope=\"row\"] > a[title=\"Wikipedia:Reliable sources\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "any": [
+      {
+        "id": "color-contrast",
+        "data": {
+          "fgColor": "#3366cc",
+          "bgColor": "#ddddff",
+          "contrastRatio": 4.05,
+          "fontSize": "10.6pt (14.08px)",
+          "fontWeight": "bold",
+          "messageKey": null,
+          "expectedContrastRatio": "4.5:1"
+        },
+        "relatedNodes": [
+          {
+            "html": "<th scope=\"row\" class=\"navbox-group\" style=\"text-align: center;;width:1%\"><a href=\"/wiki/Category:Wikipedia_how-to\" title=\"Category:Wikipedia how-to\">How-to guides</a></th>",
+            "target": [
+              "tr:nth-child(10) > .navbox-group[scope=\"row\"]"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<a href=\"/wiki/Category:Wikipedia_how-to\" title=\"Category:Wikipedia how-to\">How-to guides</a>",
+    "target": [
+      "a[title=\"Category:Wikipedia how-to\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "any": [
+      {
+        "id": "color-contrast",
+        "data": {
+          "fgColor": "#3366cc",
+          "bgColor": "#ddddff",
+          "contrastRatio": 4.05,
+          "fontSize": "10.6pt (14.08px)",
+          "fontWeight": "bold",
+          "messageKey": null,
+          "expectedContrastRatio": "4.5:1"
+        },
+        "relatedNodes": [
+          {
+            "html": "<th scope=\"row\" class=\"navbox-group\" style=\"text-align: center;;width:1%\"><a href=\"/wiki/Wikipedia:Directories_and_indexes\" title=\"Wikipedia:Directories and indexes\">Directories</a> and glossaries</th>",
+            "target": [
+              "tr:nth-child(12) > .navbox-group[scope=\"row\"]"
+            ]
+          }
+        ],
+        "impact": "serious",
+        "message": "Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "serious",
+    "html": "<a href=\"/wiki/Wikipedia:Directories_and_indexes\" title=\"Wikipedia:Directories and indexes\">Directories</a>",
+    "target": [
+      "tr:nth-child(12) > .navbox-group[scope=\"row\"] > a"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.05 (foreground color: #3366cc, background color: #ddddff, font size: 10.6pt (14.08px), font weight: bold). Expected contrast ratio of 4.5:1"
+  }
+]</pre>
+              </details>
+            </div>
+          
+            <div class="violation">
+              <h3>image-alt — critical</h3>
+              <p>Images must have alternative text</p>
+              <p><b>Fix:</b> Add descriptive alt text to images that convey meaning. Avoid using empty alt attributes for informative images. <a class="doc" href="https://www.w3.org/WAI/tutorials/images/decision-tree/" target="_blank">Read more</a></p>
+              <details><summary>Nodes (1)</summary>
+                <pre>[
+  {
+    "any": [
+      {
+        "id": "has-alt",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element does not have an alt attribute"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element has no title attribute"
+      },
+      {
+        "id": "presentational-role",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "critical",
+        "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ],
+    "all": [],
+    "none": [],
+    "impact": "critical",
+    "html": "<img src=\"//upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Pencil_edit_icon.svg/22px-Pencil_edit_icon.svg.png\" decoding=\"async\" width=\"22\" height=\"22\" class=\"mw-file-element\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Pencil_edit_icon.svg/33px-Pencil_edit_icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Pencil_edit_icon.svg/44px-Pencil_edit_icon.svg.png 2x\" data-file-width=\"20\" data-file-height=\"20\">",
+    "target": [
+      "img[width=\"22\"]"
+    ],
+    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+  }
+]</pre>
+              </details>
+            </div>
+          
+            <div class="violation">
+              <h3>link-name — serious</h3>
+              <p>Links must have discernible text</p>
+              <p><b>Fix:</b> Review documentation and apply WCAG guidance for this rule. </p>
+              <details><summary>Nodes (1)</summary>
+                <pre>[
+  {
+    "any": [
+      {
+        "id": "has-visible-text",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element does not have text that is visible to screen readers"
+      },
+      {
+        "id": "aria-label",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-label attribute does not exist or is empty"
+      },
+      {
+        "id": "aria-labelledby",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+      },
+      {
+        "id": "non-empty-title",
+        "data": {
+          "messageKey": "noAttr"
+        },
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element has no title attribute"
+      }
+    ],
+    "all": [],
+    "none": [
+      {
+        "id": "focusable-no-name",
+        "data": null,
+        "relatedNodes": [],
+        "impact": "serious",
+        "message": "Element is in tab order and does not have accessible text"
+      }
+    ],
+    "impact": "serious",
+    "html": "<a href=\"/wiki/File:Pencil_edit_icon.svg\" class=\"mw-file-description\">",
+    "target": [
+      ".mw-file-description"
+    ],
+    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+  }
+]</pre>
+              </details>
+            </div>
+          
+        </div>
+
+        <hr/>
+        <h3>Screenshot</h3>
+        <img src="screenshot-752d6af0-da54-46f2-9e86-a256959ef2df.png" alt="screenshot of https://en.wikipedia.org/wiki/Wikipedia:About" />
+
+        <hr/>
+        <p style="font-size:0.9em;color:#555">Automated checks cover only a subset of WCAG success criteria. Manual review is required for full conformance. See <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">W3C WCAG</a>.</p>
+      </body>
+      </html>
+      

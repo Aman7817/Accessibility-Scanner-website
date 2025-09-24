@@ -744,7 +744,7 @@ const Login = () => {
   useEffect(() => {
     console.log('Login.jsx: AuthContext user ->', user);
     if (user) {
-      navigate('/dashboard', { replace: true });
+      navigate('/Profile', { replace: true });
     }
   }, [user, navigate]);
 
