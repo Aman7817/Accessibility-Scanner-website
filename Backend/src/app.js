@@ -29,12 +29,12 @@ app.use(cookieParser());
 import userRouter from './routes/user.routes.js';
 import scanRouter from './routes/scan.routes.js';
 import reportRouter from './routes/report.routes.js';
-import chatRouter from './routes/chat.routes.js';
+
 // Routes declaration
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/scan", scanRouter);
 app.use("/api/v1/reports", reportRouter);
-app.use("/api/v1/chat", chatRouter);
+
 
 // Health check endpoint
 app.get('/api/v1/health', (req, res) => {
