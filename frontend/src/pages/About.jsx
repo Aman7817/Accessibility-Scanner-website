@@ -19,7 +19,7 @@ const About = () => {
           <div className="md:w-1/2 mb-8 md:mb-0">
             <h3 className="text-3xl font-bold text-gray-800 mb-6">Our Story</h3>
             <p className="text-gray-600 mb-4">
-              Founded in 2020, DeepSeek began as a passion project between two developers who saw how many websites failed basic accessibility standards.
+              Founded in 2025, WebLoom began as a passion project between two developers who saw how many websites failed basic accessibility standards.
             </p>
             <p className="text-gray-600 mb-4">
               After working with organizations that serve people with disabilities, we realized the profound impact that inaccessible websites have on real people's lives.
@@ -29,14 +29,28 @@ const About = () => {
             </p>
           </div>
           <div className="md:w-1/2 flex justify-center">
-            <div className="bg-blue-100 rounded-xl p-6 w-full max-w-md">
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <img 
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" 
-                  alt="Our team working together" 
-                  className="rounded-lg mb-4"
-                />
-                <p className="text-gray-600 text-center">Our team at the 2023 Web Accessibility Conference</p>
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 w-full max-w-md">
+              <div className="bg-white rounded-lg shadow-lg p-6 border border-blue-100">
+                <div className="bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg w-full h-64 flex items-center justify-center mb-4">
+                  <div className="text-center">
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className="h-16 w-16 text-blue-600 mx-auto mb-4" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" 
+                      />
+                    </svg>
+                    <p className="text-blue-800 font-semibold">Building Accessible Web Together</p>
+                  </div>
+                </div>
+                <p className="text-gray-600 text-center text-sm">Our team at the 2025 Web Accessibility Conference</p>
               </div>
             </div>
           </div>
@@ -47,11 +61,11 @@ const About = () => {
       <section className="mb-16">
         <h3 className="text-3xl font-bold text-gray-800 mb-6 text-center">Our Mission & Values</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white rounded-xl shadow-md p-6 text-center">
-            <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="bg-gradient-to-br from-white to-blue-50 rounded-xl shadow-lg p-6 text-center border border-blue-100 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-gradient-to-r from-blue-500 to-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
-                className="h-8 w-8 text-blue-600" 
+                className="h-8 w-8 text-white" 
                 fill="none" 
                 viewBox="0 0 24 24" 
                 stroke="currentColor"
@@ -64,14 +78,14 @@ const About = () => {
                 />
               </svg>
             </div>
-            <h4 className="text-xl font-semibold mb-3">Inclusion First</h4>
+            <h4 className="text-xl font-semibold mb-3 text-gray-800">Inclusion First</h4>
             <p className="text-gray-600">We believe the web should be accessible to everyone, regardless of abilities or disabilities.</p>
           </div>
-          <div className="bg-white rounded-xl shadow-md p-6 text-center">
-            <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="bg-gradient-to-br from-white to-green-50 rounded-xl shadow-lg p-6 text-center border border-green-100 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-gradient-to-r from-green-500 to-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
-                className="h-8 w-8 text-blue-600" 
+                className="h-8 w-8 text-white" 
                 fill="none" 
                 viewBox="0 0 24 24" 
                 stroke="currentColor"
@@ -84,14 +98,14 @@ const About = () => {
                 />
               </svg>
             </div>
-            <h4 className="text-xl font-semibold mb-3">Education Focused</h4>
+            <h4 className="text-xl font-semibold mb-3 text-gray-800">Education Focused</h4>
             <p className="text-gray-600">We don't just identify problems - we provide resources and guidance to help developers learn.</p>
           </div>
-          <div className="bg-white rounded-xl shadow-md p-6 text-center">
-            <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="bg-gradient-to-br from-white to-purple-50 rounded-xl shadow-lg p-6 text-center border border-purple-100 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-gradient-to-r from-purple-500 to-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
-                className="h-8 w-8 text-blue-600" 
+                className="h-8 w-8 text-white" 
                 fill="none" 
                 viewBox="0 0 24 24" 
                 stroke="currentColor"
@@ -104,7 +118,7 @@ const About = () => {
                 />
               </svg>
             </div>
-            <h4 className="text-xl font-semibold mb-3">User Centered</h4>
+            <h4 className="text-xl font-semibold mb-3 text-gray-800">User Centered</h4>
             <p className="text-gray-600">Our tools are designed with real users in mind, based on feedback from people with diverse abilities.</p>
           </div>
         </div>
@@ -114,35 +128,23 @@ const About = () => {
       <section className="mb-16">
         <h3 className="text-3xl font-bold text-gray-800 mb-6 text-center">Our Journey</h3>
         <div className="max-w-3xl mx-auto">
-          <div className="border-l-4 border-blue-500 pl-6 space-y-10">
-            <div className="relative">
-              <div className="absolute -left-9 mt-1.5">
-                <div className="w-6 h-6 bg-blue-500 rounded-full"></div>
+          <div className="border-l-4 border-gradient-to-b from-blue-400 to-blue-600 pl-6 space-y-10">
+            {[
+              { year: "2025", title: "Foundation", desc: "WebLoom was founded with a mission to improve web accessibility for everyone." },
+              { year: "2025", title: "First Prototype", desc: "Developed our first working prototype and began initial testing with developers." },
+              { year: "2026", title: "Beta Launch", desc: "Launched our beta version to selected developers and organizations for feedback." },
+              { year: "2026", title: "Version 1.0", desc: "Officially launched WebLoom with comprehensive accessibility checking capabilities." }
+            ].map((item, index) => (
+              <div key={index} className="relative">
+                <div className="absolute -left-9 mt-1.5">
+                  <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full border-4 border-white shadow-lg"></div>
+                </div>
+                <div className="bg-gradient-to-r from-white to-blue-50 rounded-lg p-6 border border-blue-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <h4 className="text-xl font-semibold text-gray-800">{item.year} - {item.title}</h4>
+                  <p className="text-gray-600 mt-2">{item.desc}</p>
+                </div>
               </div>
-              <h4 className="text-xl font-semibold">2020 - Foundation</h4>
-              <p className="text-gray-600">DeepSeek was founded with a mission to improve web accessibility.</p>
-            </div>
-            <div className="relative">
-              <div className="absolute -left-9 mt-1.5">
-                <div className="w-6 h-6 bg-blue-500 rounded-full"></div>
-              </div>
-              <h4 className="text-xl font-semibold">2021 - Beta Launch</h4>
-              <p className="text-gray-600">Launched our beta scanner to selected developers and organizations.</p>
-            </div>
-            <div className="relative">
-              <div className="absolute -left-9 mt-1.5">
-                <div className="w-6 h-6 bg-blue-500 rounded-full"></div>
-              </div>
-              <h4 className="text-xl font-semibold">2022 - Version 1.0</h4>
-              <p className="text-gray-600">Officially launched with comprehensive accessibility checking capabilities.</p>
-            </div>
-            <div className="relative">
-              <div className="absolute -left-9 mt-1.5">
-                <div className="w-6 h-6 bg-blue-500 rounded-full"></div>
-              </div>
-              <h4 className="text-xl font-semibold">2023 - Expanded Features</h4>
-              <p className="text-gray-600">Added automated fixes, educational resources, and team collaboration tools.</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -151,73 +153,62 @@ const About = () => {
       <section className="mb-16">
         <h3 className="text-3xl font-bold text-gray-800 mb-6 text-center">Meet Our Team</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="bg-white rounded-xl shadow-md overflow-hidden text-center">
-            <img 
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" 
-              alt="Team member" 
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h4 className="text-xl font-semibold">Sarah Johnson</h4>
-              <p className="text-blue-600 mb-2">Founder & CEO</p>
-              <p className="text-gray-600 text-sm">Web accessibility specialist with 10+ years of experience.</p>
+          {[
+            { name: "Aman", role: "Founder & CEO", desc: "Web accessibility specialist with passion for inclusive design.", bg: "from-blue-500 to-blue-700" },
+            { name: "Aman", role: "Lead Developer", desc: "Full-stack developer passionate about creating accessible web experiences.", bg: "from-green-500 to-green-700" },
+            { name: "Nitin", role: "UI Designer", desc: "Creates intuitive and accessible user interfaces for all users.", bg: "from-purple-500 to-purple-700" },
+            { name: "MOHD. Munazir", role: "Accessibility Advocate", desc: "Works directly with communities to understand accessibility needs.", bg: "from-orange-500 to-orange-700" }
+          ].map((member, index) => (
+            <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden text-center hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+              <div className={`w-full h-48 bg-gradient-to-br ${member.bg} flex items-center justify-center`}>
+                <div className="text-6xl font-bold text-white">{member.name.charAt(0)}</div>
+              </div>
+              <div className="p-6">
+                <h4 className="text-xl font-semibold text-gray-800">{member.name}</h4>
+                <p className="text-blue-600 font-medium mb-3">{member.role}</p>
+                <p className="text-gray-600 text-sm leading-relaxed">{member.desc}</p>
+              </div>
             </div>
-          </div>
-          <div className="bg-white rounded-xl shadow-md overflow-hidden text-center">
-            <img 
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" 
-              alt="Team member" 
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h4 className="text-xl font-semibold">Michael Chen</h4>
-              <p className="text-blue-600 mb-2">Lead Developer</p>
-              <p className="text-gray-600 text-sm">Full-stack developer passionate about inclusive design.</p>
-            </div>
-          </div>
-          <div className="bg-white rounded-xl shadow-md overflow-hidden text-center">
-            <img 
-              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" 
-              alt="Team member" 
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h4 className="text-xl font-semibold">Emily Rodriguez</h4>
-              <p className="text-blue-600 mb-2">UX Designer</p>
-              <p className="text-gray-600 text-sm">Creates intuitive experiences for all users.</p>
-            </div>
-          </div>
-          <div className="bg-white rounded-xl shadow-md overflow-hidden text-center">
-            <img 
-              src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" 
-              alt="Team member" 
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h4 className="text-xl font-semibold">David Kim</h4>
-              <p className="text-blue-600 mb-2">Accessibility Advocate</p>
-              <p className="text-gray-600 text-sm">Works directly with disability communities to understand needs.</p>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl shadow-xl p-8 text-center text-white max-w-4xl mx-auto">
-        <h3 className="text-3xl font-bold mb-4">Join Us in Making the Web More Accessible</h3>
-        <p className="text-xl mb-6">Start scanning your website today and make a difference for users of all abilities.</p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <button className="bg-white text-blue-600 font-semibold py-3 px-8 rounded-lg hover:bg-blue-50 transition-colors">
-            Get Started
-          </button>
-          <button className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white/10 transition-colors">
-            Contact Us
-          </button>
+      {/* Call to Action - Improved Design */}
+      <section className="mb-16">
+        <div className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 rounded-2xl shadow-2xl p-12 text-center text-white relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `radial-gradient(circle at 25% 25%, #ffffff 2%, transparent 2%), radial-gradient(circle at 75% 75%, #ffffff 2%, transparent 2%)`,
+              backgroundSize: '50px 50px'
+            }}></div>
+          </div>
+          
+          {/* Content */}
+          <div className="relative z-10">
+            <h3 className="text-4xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+              Join the Accessibility Revolution
+            </h3>
+            <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto leading-relaxed">
+              Be part of the movement to create a web that's truly inclusive for everyone. 
+              Start your accessibility journey today and make a lasting impact.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <a
+
+              href="/signup"
+              className="inline-block bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold py-3 px-6 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              aria-label="Start free trial — Sign up"
+            >
+              Start Free Trial
+            </a>
+              
+            </div>
+            <p className="text-blue-200 text-sm mt-6">No credit card required • 14-day free trial</p>
+          </div>
         </div>
       </section>
-      
     </div>
-    
   );
 };
 

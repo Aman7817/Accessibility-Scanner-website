@@ -64,7 +64,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-lg">
+    <header className="bg-gradient-to-r  z-index: 1000 from-blue-600 to-indigo-700 text-white shadow-lg">
       <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
         <div className="flex items-center space-x-2 mb-4 md:mb-0">
           <div className="bg-white p-2 rounded-full">
