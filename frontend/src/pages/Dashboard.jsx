@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card, { CardContent } from "@/components/UI/Card";
-import Button from "@/components/ui/Button";
+import Button from "@/components/UI/Button";
 import api from "../utils/axios";
 
 const Dashboard = () => {
