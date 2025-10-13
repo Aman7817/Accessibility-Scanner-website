@@ -14,7 +14,10 @@ const REPORT_DIR = process.env.REPORT_DIR || path.join(process.cwd(), 'reports')
 
 // CORS configuration
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
+  origin: [
+    'http://localhost:5173', // dev frontend
+    'https://accessibility-scanner-website-qg5h.vercel.app' // live frontend
+  ],
   credentials: true
 }));
 
