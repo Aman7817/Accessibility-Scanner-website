@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Card, { CardContent } from "@/components/ui/Card";
+import Card, { CardContent } from "@/components/UI/Card";
 import Button from "@/components/ui/Button";
 import api from "../utils/axios";
 
