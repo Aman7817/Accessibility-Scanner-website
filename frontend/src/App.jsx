@@ -2,10 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
-import MainLayout from "./layouts/MainLayout"; // Correct import path
+import MainLayout from "./layouts/MainLayout.jsx"; // Correct import path
 
-import Home from "./pages/Home";
-import API from "./pages/API";
+import Home from "./pages/Home.jsx";
+
 import Blog from "./pages/Blog";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
@@ -35,7 +35,7 @@ function App() {
 
             {/* Public Routes */}
             <Route path="/about" element={<About />} />
-            <Route path="/api" element={<API />} />
+            
             <Route path="/blog" element={<Blog />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
