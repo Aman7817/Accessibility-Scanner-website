@@ -24,7 +24,7 @@ router.route('/change-password').put(verifyjwt, changePassword); // Changed from
 router.route('/deleteMe').delete(verifyjwt, deleteMe) // Changed from loginUser to deleteMe
 
 router.put('/change-password', (req, res) => {
-  console.log("🔥 Change password route hit");
+  console.log("Change password route hit");
   res.send("OK");
 });
 export default router

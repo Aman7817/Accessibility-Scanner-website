@@ -69,7 +69,7 @@ userSchema.methods.generateAccessToken = function () {
       _id: this._id,          // User's unique ID
       email: this.email,      // User's email
       // username: this.username // User's username
-      fullname: this.fullname, // User's full name
+      firstName: this.firstName, // User's first name
       lastName: this.lastName // User's last name
     },
     process.env.ACCESS_TOKEN_SECRET,   // Secret key for signing the access token

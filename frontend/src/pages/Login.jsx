@@ -98,9 +98,24 @@ const Login = () => {
             {errors.submit}
           </div>
         )}
-
+        {/* Demo Credentials */}
+        <div className="bg-indigo-500/10 border border-indigo-500 text-indigo-300 p-3 rounded-md mb-4 text-sm">
+          <p className="font-medium mb-1"> Try Demo Account</p>
+          <p>Email: <span className="font-semibold">demo@gmail.com</span></p>
+          <p>Password: <span className="font-semibold">Demo@123</span></p>
+        </div>
         <form className="mt-8" onSubmit={handleSubmit}>
           <div className="mb-4">
+            <button
+              type="button"
+              onClick={() => {
+                setEmail("demo@gmail.com");
+                setPassword("Demo@123");
+              }}
+              className="w-full mb-4 px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-md text-sm transition"
+            >
+               Use Demo Account
+            </button>
             <label htmlFor="email" className="block mb-1 font-medium text-slate-300">Email address</label>
             <input
               type="email"

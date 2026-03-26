@@ -8,10 +8,17 @@ const generateAccessAndRefreshToken = async (userId) => {
     try {
         // Fetch the user from the database using their ID
         const user = await User.findById(userId);
+         // Debug logs
+        console.log("Generating tokens for user:", userId);
+        console.log("User found:", user ? "Yes" : "No");
 
         // Generate access and refresh tokens using user-defined methods
         const accessToken = user.generateAccessToken();
         const refreshToken = user.generateRefreshToken();
+
+         console.log("Access token generated:", accessToken ? "Yes" : "No");
+        console.log("Refresh token generated:", refreshToken ? "Yes" : "No");
+
 
         // Save the refresh token in the database
         user.refreshToken = refreshToken;
@@ -20,6 +27,8 @@ const generateAccessAndRefreshToken = async (userId) => {
         // Return the tokens
         return { accessToken, refreshToken };
     } catch (error) {
+          console.error("Token generation error:", error.message);
+        console.error("Full error:", error);
         // Handle errors during token generation
         throw new ApiError(501, "Something went wrong while generating tokens");
     }
@@ -82,6 +91,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
 // Controller to log in a user
 const loginUser = asyncHandler(async (req, res) => {
+    console.log("🔥 LOGIN CONTROLLER REACHED"); 
     // Extract login details from the request body
     const { email, password } = req.body;
 
