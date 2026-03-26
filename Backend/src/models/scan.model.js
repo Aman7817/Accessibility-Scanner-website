@@ -9,7 +9,7 @@ const ScanSchema = new Schema({
     status: {
         type: String,
         enum: ['pending', 'running', 'completed', 'failed'],        
-        default: 'pending'
+        default: 'pending' 
     },
     score: {
         type: Number,
