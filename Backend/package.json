@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
+    "build": "echo 'Build completed'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --ignore reports src/index.js"
   },
