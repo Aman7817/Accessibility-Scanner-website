@@ -6,14 +6,10 @@
   "scripts": {
     "start": "node src/index.js",
     "build": "echo 'Build completed'",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --ignore reports src/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
+    "@sparticuz/chromium": "^133.0.0",
     "axe-core": "^4.10.3",
     "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
@@ -27,7 +23,7 @@
     "openai": "^5.23.0",
     "path-to-regexp": "^6.2.1",
     "pdfkit": "^0.17.2",
-    "puppeteer": "^24.17.1",
+    "puppeteer-core": "^24.17.1",
     "url": "^0.11.4",
     "uuid": "^11.1.0",
     "valid-url": "^1.0.9"

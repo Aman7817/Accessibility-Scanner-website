@@ -1,4 +1,5 @@
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
+import chromium from '@sparticuz/chromium';
 import { v4 as uuidv4 } from 'uuid';
 import fs from 'fs';
 import axeCore from 'axe-core';
@@ -61,32 +62,19 @@ export async function runScan(url, scanId = null) {
 
   console.log(`[scan:${scanId || id}] runScan starting for:`, url);
   try {
-    // Prepare puppeteer launch options
-    const launchArgs = [
-      '--disable-web-security',
-      '--disable-features=VizDisplayCompositor',
-      '--disable-background-timer-throttling',
-      '--disable-backgrounding-occluded-windows',
-      '--disable-renderer-backgrounding',
-      '--disable-dev-shm-usage'
-    ];
-    
-    if (process.env.PUP_NO_SANDBOX === 'true' || process.env.PUP_NO_SANDBOX === '1') {
-      launchArgs.push('--no-sandbox', '--disable-setuid-sandbox');
-    }
-    
     const launchOptions = {
-      headless: true,
-      args: launchArgs,
+      args: [
+        ...chromium.args,
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage'
+      ],
+      executablePath: await chromium.executablePath(),
+      headless: chromium.headless,
       ignoreHTTPSErrors: true
     };
-    
-    if (process.env.CHROME_PATH) {
-      launchOptions.executablePath = process.env.CHROME_PATH;
-      console.log(`[scan:${scanId || id}] Using CHROME_PATH: ${process.env.CHROME_PATH}`);
-    }
 
-    console.log(`[scan:${scanId || id}] Launching browser...`);
+    console.log(`[scan:${scanId || id}] Launching browser with @sparticuz/chromium...`);
     try {
       browser = await puppeteer.launch(launchOptions);
     } catch (err) {
@@ -95,11 +83,8 @@ export async function runScan(url, scanId = null) {
     }
 
     const page = await browser.newPage();
-    
-    // Set a longer default timeout
     page.setDefaultTimeout(60000);
     page.setDefaultNavigationTimeout(60000);
-    
     await page.setViewport({ width: 1280, height: 800 });
 
     // Navigate to the page
@@ -111,7 +96,6 @@ export async function runScan(url, scanId = null) {
       });
     } catch (err) {
       console.warn(`[scan:${scanId || id}] page.goto warning: ${err.message || err}`);
-      // Try with a different wait strategy
       try {
         await page.goto(url, { 
           waitUntil: 'domcontentloaded', 
@@ -122,18 +106,15 @@ export async function runScan(url, scanId = null) {
       }
     }
 
-    // FIXED: Simple and reliable axe-core injection
+    // Inject axe-core
     console.log(`[scan:${scanId || id}] Injecting axe-core...`);
     try {
-      // Method 1: Direct evaluation (most reliable)
       await page.evaluate(axeSource => {
-        // Create a script element and inject axe-core
         const script = document.createElement('script');
         script.textContent = axeSource;
         document.head.appendChild(script);
       }, axeCore.source);
 
-      // Wait for axe to be available with multiple checks
       let axeAvailable = false;
       for (let i = 0; i < 10; i++) {
         axeAvailable = await page.evaluate(() => {
@@ -141,7 +122,6 @@ export async function runScan(url, scanId = null) {
                  typeof window.axe.run === 'function' &&
                  typeof window.axe.configure === 'function';
         });
-        
         if (axeAvailable) break;
         await new Promise(resolve => setTimeout(resolve, 500));
       }
@@ -149,14 +129,13 @@ export async function runScan(url, scanId = null) {
       if (!axeAvailable) {
         throw new Error('axe-core not loaded after multiple attempts');
       }
-
       console.log(`[scan:${scanId || id}] axe-core injected successfully`);
     } catch (err) {
       console.error(`[scan:${scanId || id}] axe injection failed:`, err.message || err);
       throw new Error(`Failed to inject accessibility engine: ${err.message}`);
     }
 
-    // Run axe with simpler configuration
+    // Run axe
     console.log(`[scan:${scanId || id}] Running axe.run on the page...`);
     let axeResults = null;
     try {
@@ -164,8 +143,6 @@ export async function runScan(url, scanId = null) {
         if (typeof axe === 'undefined' || !axe.run) {
           throw new Error('axe core not available');
         }
-        
-        // Simple configuration that works reliably
         return await axe.run(document, {
           runOnly: {
             type: 'tags',
@@ -173,7 +150,6 @@ export async function runScan(url, scanId = null) {
           }
         });
       });
-      
       console.log(`[scan:${scanId || id}] axe.run completed successfully. Found ${axeResults.violations.length} violations.`);
     } catch (err) {
       console.error(`[scan:${scanId || id}] axe.run failed:`, err.message || err);
